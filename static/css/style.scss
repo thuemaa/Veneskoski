@@ -1,0 +1,64 @@
+$bg-color: #9FAEAB;
+$nav-color: #748D88;
+$nav-color2: #557570;
+$extra-color1: #3D615B;
+$extra-color2: #254741;
+$opposite-color: #B99B89;
+
+@import 'reset';
+
+body {
+  background-color: $bg-color;
+}
+
+/*---------------------------STYLING FOR NAV-------------------------*/
+nav {
+  position: sticky;
+  top: 0px;
+  overflow: hidden;
+  background: linear-gradient(to bottom right, $nav-color, $nav-color2);
+}
+
+nav a {
+  float: left;
+  display: block;
+  color: $opposite-color;
+  text-decoration: none;
+  padding: 12px 15px;
+  font-size: 18px;
+}
+
+.nav_button_div {
+  height: 100%;
+  float: right;
+  z-index: 2;
+  background-color: $extra-color1;
+  color: $extra-color2;
+}
+
+
+.nav_links_container {
+  position: fixed;
+  float: left;
+  top: 48px;
+  display: flex;
+  flex-direction: column;
+  background-color: $nav-color2;
+}
+
+.nav_links_container div:nth-child(odd){
+  background-color: $nav-color2;
+}
+
+.nav_links_container div:nth-child(even){
+  background-color: $nav-color;
+}
+
+.link_div a {
+  padding: 6px 8px;
+}
+/*--------------------------------------------------------------------*/
+
+.maindiv {
+  margin: auto 10px;
+}

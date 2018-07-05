@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Veneskoski{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script type="text/javascript" src="{% static 'js/jquery-3.3.1.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/front.js' %}"></script>
+</head>
+<body>
+    <!-- Navigation bar--->
+    <nav class="navbar">
+        <a href="{% url 'homepage'%}">Veneskoski</a>
+        <div class="nav_button_div">
+            <a href="#" id="navbutton">☰</a>
+        </div>
+        <div class="nav_links_container">
+            <div class="link_div"><a href="#">Ajankohtaista</a></div>
+            <div class="link_div"><a href="#">Kesäteatteri</a></div>
+            <div class="link_div"><a href="#">Tapahtumat</a></div>
+            <div class="link_div"><a href="#">Valokuvia</a></div>
+            <div class="link_div"><a href="#">Vuokrattavana</a></div>
+            <div class="link_div"><a href="#">Kylän yhdistykset</a></div>
+            <div class="link_div"><a href="#">Kartta</a></div>
+            <div class="link_div"><a href="#">Kyläläisille</a></div>
+        </div>
+    </nav>
+    <!-- main div -->
+    <div class="maindiv">
+        {% block content %}
+        <!--- load page contents here -->
+        {% endblock content %}
+    </div>
+</body>
+</html>
