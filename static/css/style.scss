@@ -16,7 +16,7 @@ nav {
   position: sticky;
   top: 0px;
   overflow: hidden;
-  background: linear-gradient(to bottom right, $nav-color, $nav-color2);
+  background: linear-gradient(to right, $nav-color, $nav-color2);
 }
 
 nav a {
@@ -32,7 +32,7 @@ nav a {
   height: 100%;
   float: right;
   z-index: 2;
-  background-color: $extra-color1;
+  background: radial-gradient(circle closest-side,$nav-color, $nav-color2);
   color: $extra-color2;
 }
 
