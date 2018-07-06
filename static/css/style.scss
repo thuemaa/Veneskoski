@@ -4,6 +4,7 @@ $nav-color2: #557570;
 $extra-color1: #3D615B;
 $extra-color2: #254741;
 $opposite-color: #B99B89;
+$active-link: #c8e2dd;
 
 @import 'reset';
 
@@ -16,7 +17,7 @@ nav {
   position: sticky;
   top: 0px;
   overflow: hidden;
-  background: linear-gradient(to right, $nav-color, $nav-color2);
+  background: linear-gradient(to right, $nav-color, $nav-color2, $nav-color2);
 }
 
 nav a {
@@ -24,8 +25,8 @@ nav a {
   display: block;
   color: $opposite-color;
   text-decoration: none;
-  padding: 12px 15px;
-  font-size: 18px;
+  padding: 1rem 1rem;
+  font-size: 2rem;
 }
 
 .nav_button_div {
@@ -40,22 +41,39 @@ nav a {
 .nav_links_container {
   position: fixed;
   float: left;
-  top: 48px;
+  top: 4.7rem;
   display: flex;
   flex-direction: column;
-  background-color: $nav-color2;
-}
 
-.nav_links_container div:nth-child(odd){
-  background-color: $nav-color2;
-}
+  div:nth-child(odd){
+    background-color: $nav-color2;
+  }
 
-.nav_links_container div:nth-child(even){
-  background-color: $nav-color;
+  div:nth-child(even){
+    background-color: $nav-color;
+  }
+
 }
 
 .link_div a {
+  font-size: 1.8rem;
   padding: 6px 8px;
+}
+
+.inner_link_div {
+  position: fixed;
+  /*adjust this for outer links to appear right on the border of upper link div*/
+  left: 14.04rem;
+
+  a {
+    font-size: 1.8rem;
+    padding: 6px 6px;
+  }
+}
+
+/*add this style class to clicked link*/
+.active_link {
+  background-color: $active-link;
 }
 /*--------------------------------------------------------------------*/
 
