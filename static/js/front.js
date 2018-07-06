@@ -29,15 +29,19 @@ function toggleElement(id) {
     }
     else if (id == "ajankohtaista_a") {
         $("#tapahtumat_div").hide();
+        $("#tapahtumat_a").parent().removeClass("active_link");
+
         $("#ajankohtaista_div").toggle();
         /*change the background of active div*/
-        $("#" + id).parent().class("active_link");
-        //$("#" + id).addClass("active_link");
-        console.log( $("#ajankohtaista_a").parent() );
+        $("#" + id).parent().toggleClass("active_link");
     }
 
     else {
+        /*hide the other extendable menu and remove the active link class*/
         $("#ajankohtaista_div").hide();
+        $("#ajankohtaista_a").parent().removeClass("active_link");
+
         $("#tapahtumat_div").toggle();
+        $("#" + id).parent().toggleClass("active_link");
     }
 }

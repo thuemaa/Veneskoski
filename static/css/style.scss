@@ -4,7 +4,7 @@ $nav-color2: #557570;
 $extra-color1: #3D615B;
 $extra-color2: #254741;
 $opposite-color: #B99B89;
-$active-link: #c8e2dd;
+$active-link-color: #c8e2dd;
 
 @import 'reset';
 
@@ -44,39 +44,35 @@ nav a {
   top: 4.7rem;
   display: flex;
   flex-direction: column;
-
-  div:nth-child(odd){
-    background-color: $nav-color2;
-  }
-
-  div:nth-child(even){
-    background-color: $nav-color;
-  }
-
 }
 
-.link_div a {
-  font-size: 1.8rem;
-  padding: 6px 8px;
+.link_div {
+  background-color: $nav-color2;
+
+  a {
+    font-size: 1.8rem;
+    padding: 6px 8px;
+  }
 }
 
 .inner_link_div {
   position: fixed;
   /*adjust this for outer links to appear right on the border of upper link div*/
   left: 14.04rem;
+  background-color: $nav-color;
 
   a {
-    font-size: 1.8rem;
-    padding: 6px 6px;
+      font-size: 1.8rem;
+      padding: 6px 6px;
+    }
+}
+
+  /*add this style class to clicked link*/
+  .active_link {
+    background-color: $active-link-color;
   }
-}
+  /*--------------------------------------------------------------------*/
 
-/*add this style class to clicked link*/
-.active_link {
-  background-color: $active-link;
-}
-/*--------------------------------------------------------------------*/
-
-.maindiv {
-  margin: auto 10px;
-}
+  .maindiv {
+    margin: auto 10px;
+  }

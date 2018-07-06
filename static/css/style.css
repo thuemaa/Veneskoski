@@ -33,19 +33,18 @@ nav a {
   top: 4.7rem;
   display: flex;
   flex-direction: column; }
-  .nav_links_container div:nth-child(odd) {
-    background-color: #557570; }
-  .nav_links_container div:nth-child(even) {
-    background-color: #748D88; }
 
-.link_div a {
-  font-size: 1.8rem;
-  padding: 6px 8px; }
+.link_div {
+  background-color: #557570; }
+  .link_div a {
+    font-size: 1.8rem;
+    padding: 6px 8px; }
 
 .inner_link_div {
   position: fixed;
   /*adjust this for outer links to appear right on the border of upper link div*/
-  left: 14.04rem; }
+  left: 14.04rem;
+  background-color: #748D88; }
   .inner_link_div a {
     font-size: 1.8rem;
     padding: 6px 6px; }
