@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h2>Luo käyttäjätunnus</h2>
+    <form method="POST" novalidate>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Luo käyttäjätunnus</button>
+    </form>
+{% endblock %}

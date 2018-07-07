@@ -3,7 +3,7 @@ $nav-color: #748D88;
 $nav-color2: #557570;
 $extra-color1: #3D615B;
 $extra-color2: #254741;
-$opposite-color: #B99B89;
+$opposite-color: #FFFFFF;
 $active-link-color: #c8e2dd;
 
 @import 'reset';
@@ -74,5 +74,5 @@ nav a {
   /*--------------------------------------------------------------------*/
 
   .maindiv {
-    margin: auto 10px;
+    margin: auto 2rem;
   }

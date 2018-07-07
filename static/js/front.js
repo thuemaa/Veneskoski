@@ -18,12 +18,16 @@ $(document).ready(function() {
     });
 });
 
-/*click functions for toggling navbar elements*/
+/*click function for toggling navbar elements*/
 function toggleElement(id) {
-    console.log("painettii nappia " + id);
+
     if (id == "navbutton") {
+        /*hide extendable nav links on nav menu toggle*/
         $("#ajankohtaista_div").hide();
         $("#tapahtumat_div").hide();
+        $("#ajankohtaista_a").parent().removeClass("active_link");
+        $("#tapahtumat_a").parent().removeClass("active_link");
+
         $(".nav_links_container").toggle();
 
     }

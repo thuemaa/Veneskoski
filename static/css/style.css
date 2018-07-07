@@ -15,7 +15,7 @@ nav {
 nav a {
   float: left;
   display: block;
-  color: #B99B89;
+  color: #FFFFFF;
   text-decoration: none;
   padding: 1rem 1rem;
   font-size: 2rem; }
@@ -55,6 +55,6 @@ nav a {
 
 /*--------------------------------------------------------------------*/
 .maindiv {
-  margin: auto 10px; }
+  margin: auto 2rem; }
 
 /*# sourceMappingURL=style.css.map */
