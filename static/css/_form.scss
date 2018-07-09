@@ -1,0 +1,36 @@
+$valid_color: #458044;
+$invalid_color: #ff696d;
+$helptext_color: #748050;
+
+.field_div {
+  display: flex;
+  flex-direction: column;
+
+  input {
+    border-radius: 6px;
+
+  }
+}
+
+.help_text {
+  font-size: 12px;
+  color: $helptext_color;
+}
+
+.form_field {
+  height: 1.4rem;
+}
+
+.valid_field {
+  border: 1px solid $valid_color;
+}
+
+.invalid_field {
+  border: 1px solid $invalid_color;
+}
+
+.errorlist {
+  list-style-type: None;
+  font-size: 12px;
+  color: $helptext_color;
+}

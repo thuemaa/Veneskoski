@@ -2,10 +2,6 @@ html, body, ul, ol {
   margin: 0;
   padding: 0; }
 
-body {
-  background-color: #9FAEAB; }
-
-/*---------------------------STYLING FOR NAV-------------------------*/
 nav {
   position: sticky;
   top: 0px;
@@ -53,7 +49,33 @@ nav a {
 .active_link {
   background-color: #c8e2dd; }
 
-/*--------------------------------------------------------------------*/
+.field_div {
+  display: flex;
+  flex-direction: column; }
+  .field_div input {
+    border-radius: 6px; }
+
+.help_text {
+  font-size: 12px;
+  color: #748050; }
+
+.form_field {
+  height: 1.4rem; }
+
+.valid_field {
+  border: 1px solid #458044; }
+
+.invalid_field {
+  border: 1px solid #ff696d; }
+
+.errorlist {
+  list-style-type: None;
+  font-size: 12px;
+  color: #748050; }
+
+body {
+  background-color: #9FAEAB; }
+
 .maindiv {
   margin: auto 2rem; }
 
