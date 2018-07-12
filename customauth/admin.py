@@ -58,10 +58,17 @@ class UserAdmin(BaseUserAdmin):
 
     list_display = ('email', 'first_name', 'last_name')
     list_filter = ('is_admin',)
-    add_fieldsets = (
+    fieldsets = (
         (None, {'fields': ('email', 'password')}),
         ('Nimitiedot', {'fields': ('first_name', 'last_name')}),
         ('Ylläpitäjä', {'fields': ('is_admin',)}),
+    )
+
+    add_fieldsets = (
+        (None, {
+            'classes': ('wide',),
+            'fields': ('email', 'date_of_birth', 'password1', 'password2')}
+         ),
     )
 
     search_fields = ('email',)

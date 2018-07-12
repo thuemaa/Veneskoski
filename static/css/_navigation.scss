@@ -19,8 +19,20 @@ nav a {
   display: block;
   color: $opposite-color;
   text-decoration: none;
-  padding: 1rem 1rem;
   font-size: 2rem;
+}
+
+.logo_container {
+  float: left;
+  display: inline;
+  width: 8rem;
+  height: 8rem;
+  margin: 0.6rem 1.8rem;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
 }
 
 .nav_button_div {
@@ -29,12 +41,15 @@ nav a {
   z-index: 2;
   background: radial-gradient(circle closest-side,$nav-color, $nav-color2);
   color: $extra-color2;
+  padding: 2rem 2rem;
+  margin-top: 1rem;
 }
 
 
 .nav_links_container {
   position: fixed;
   float: left;
+  /*Adjust this for dropdown menu to appear right below the navbar*/
   top: 4.7rem;
   display: flex;
   flex-direction: column;

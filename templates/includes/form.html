@@ -13,6 +13,6 @@
         {% else %}
             {% render_field field class="form_field" %}
         {% endif %}
-        <span class="help_text">{{ field.help_text|safe }}</span>
+        {% if field.help_text %}<span class="help_text">{{ field.help_text|safe }}</span>{%  endif %}
     {% endfor %}
 </div>
