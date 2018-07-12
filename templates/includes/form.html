@@ -1,6 +1,11 @@
 {% load widget_tweaks %}
 
 <div class="field_div">
+
+    {% if form.non_field_errors %}
+        <h3>Käyttäjää ei löydy. Tarkista sähköposti ja salasana</h3>
+    {% endif %}
+
     {% for field in form %}
         {{ field.label_tag }}
         {% if form.is_bound %}

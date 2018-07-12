@@ -131,3 +131,7 @@ STATICFILES_DIRS = [
 
 # Set custom user model
 AUTH_USER_MODEL = 'customauth.MyUser'
+
+#Log in & log out redirect
+LOGOUT_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'home'

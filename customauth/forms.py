@@ -85,3 +85,14 @@ class LogInForm(forms.ModelForm):
             'email': 'Sähköposti',
             'password': 'Salasana',
         }
+
+        error_messages = {
+            'email': {
+                'invalid': 'Sähköpostiosoite ei ole kelvollinen',
+                'required': 'Syötä sähköpostiosoite',
+            },
+            'password': {
+                'invalid': 'Nimi ei kelpaa',
+                'required': 'Syötä etunimi',
+            },
+        }

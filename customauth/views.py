@@ -1,14 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import CreateUserForm, LogInForm
-from .models import MyUser
-# Create your views here.
-
-
-def log_in(request):
-
-    form = LogInForm()
-    return render(request, 'log_in.html', {'form': form})
+from django.contrib.auth import authenticate, login
 
 
 # account creation
