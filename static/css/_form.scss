@@ -1,6 +1,6 @@
 $valid_color: #458044;
 $invalid_color: #ff696d;
-$helptext_color: #748050;
+$helptext_color: #803526;
 
 .field_div {
   display: flex;
@@ -31,6 +31,10 @@ $helptext_color: #748050;
 
 .errorlist {
   list-style-type: None;
-  font-size: 12px;
+  font-size: 15px;
   color: $helptext_color;
+}
+
+.form_button {
+
 }

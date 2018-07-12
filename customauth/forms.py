@@ -22,7 +22,7 @@ class CreateUserForm(forms.ModelForm):
             'username': 'Käyttäjätunnus',
             'first_name': 'Etunimi',
             'last_name': 'Sukunimi',
-            'email': 'Sähköposti',
+            'email': 'Sähkööposti',
         }
 
         help_texts = {
@@ -68,15 +68,23 @@ class CreateUserForm(forms.ModelForm):
         return user
 
 
-class LogInForm(forms.ModelForm):
+class LogInForm(forms.Form):
 
     password_errors = {
         'invalid': 'Salasana ei kelpaa',
-        'required': 'Väärä salasana',
+        'required': 'Syötä salasana',
     }
 
+    email_errors = {
+        'invalid': 'Sähköpostiosoite ei ole kelvollinen',
+        'required': 'Anna säpöosote'
+    }
+
+    email = forms.EmailField(label='Sähköposti', error_messages=email_errors)
     password = forms.CharField(label='Salasana', error_messages=password_errors, widget=forms.PasswordInput)
 
+
+    '''
     class Meta:
         model = MyUser
         fields = ('email',)
@@ -93,6 +101,7 @@ class LogInForm(forms.ModelForm):
             },
             'password': {
                 'invalid': 'Nimi ei kelpaa',
-                'required': 'Syötä etunimi',
+                'required': 'Syötä salasana',
             },
         }
+    '''
