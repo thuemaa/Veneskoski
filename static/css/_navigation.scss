@@ -11,6 +11,7 @@ nav {
   position: sticky;
   top: 0px;
   overflow: hidden;
+  display: block;
   background: linear-gradient(to right, $nav-color, $nav-color2, $nav-color2);
 }
 
@@ -19,8 +20,20 @@ nav a {
   display: block;
   color: $opposite-color;
   text-decoration: none;
-  padding: 1rem 1rem;
   font-size: 2rem;
+}
+
+.logo_container {
+  float: left;
+  display: inline;
+  width: 8rem;
+  height: 8rem;
+  margin: 0.2rem 1.8rem 0.1rem  1.8rem;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
 }
 
 .nav_button_div {
@@ -29,13 +42,16 @@ nav a {
   z-index: 2;
   background: radial-gradient(circle closest-side,$nav-color, $nav-color2);
   color: $extra-color2;
+  padding: 2rem 2rem;
+  /* temp solution*/
+  margin-top: 10px;
 }
-
 
 .nav_links_container {
   position: fixed;
   float: left;
-  top: 4.7rem;
+  /*Adjust this for drop down menu to appear right below the navbar*/
+  top: 8.1rem;
   display: flex;
   flex-direction: column;
 }
@@ -48,6 +64,7 @@ nav a {
     padding: 6px 8px;
   }
 }
+
 
 .inner_link_div {
   position: fixed;

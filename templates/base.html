@@ -12,7 +12,7 @@
 <body>
     <!-- Navigation bar--->
     <nav class="navbar">
-        <a href="{% url 'homepage'%}">Veneskoski</a>
+        <div class="logo_container"><a href="{% url "home" %}"><img src="{% static 'logo.png' %}" alt="logo"></a></div>
         <div class="nav_button_div">
             <a href="#" id="navbutton">☰</a>
         </div>
@@ -44,7 +44,7 @@
             <div class="link_div"><a href="#">Vuokrattavana</a></div>
             <div class="link_div"><a href="#">Kylän yhdistykset</a></div>
             <div class="link_div"><a href="#">Kartta</a></div>
-            <div class="link_div"><a href="#">Kyläläisille</a></div>
+            <div class="link_div"><a href="{% url "log_in" %}">Kyläläisille</a></div>
         </div>
     </nav>
     <!-- main div -->

@@ -1,7 +1,8 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import User
-from django.utils.translation import ugettext_lazy as _
+
+# THIS FORM IS NOT IN USE! Using customauth/forms instead.
 
 # Form for creating user
 class SignUpForm(UserCreationForm):

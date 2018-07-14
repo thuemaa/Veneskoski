@@ -6,6 +6,7 @@ nav {
   position: sticky;
   top: 0px;
   overflow: hidden;
+  display: block;
   background: linear-gradient(to right, #748D88, #557570, #557570); }
 
 nav a {
@@ -13,20 +14,33 @@ nav a {
   display: block;
   color: #FFFFFF;
   text-decoration: none;
-  padding: 1rem 1rem;
   font-size: 2rem; }
+
+.logo_container {
+  float: left;
+  display: inline;
+  width: 8rem;
+  height: 8rem;
+  margin: 0.2rem 1.8rem 0.1rem  1.8rem; }
+  .logo_container img {
+    max-width: 100%;
+    max-height: 100%; }
 
 .nav_button_div {
   height: 100%;
   float: right;
   z-index: 2;
   background: radial-gradient(circle closest-side, #748D88, #557570);
-  color: #254741; }
+  color: #254741;
+  padding: 2rem 2rem;
+  /* temp solution*/
+  margin-top: 10px; }
 
 .nav_links_container {
   position: fixed;
   float: left;
-  top: 4.7rem;
+  /*Adjust this for drop down menu to appear right below the navbar*/
+  top: 8.1rem;
   display: flex;
   flex-direction: column; }
 
@@ -57,7 +71,7 @@ nav a {
 
 .help_text {
   font-size: 12px;
-  color: #748050; }
+  color: #803526; }
 
 .form_field {
   height: 1.4rem; }
@@ -70,8 +84,15 @@ nav a {
 
 .errorlist {
   list-style-type: None;
-  font-size: 12px;
-  color: #748050; }
+  font-size: 15px;
+  color: #803526; }
+
+.form_button {
+  margin-top: 1rem;
+  background-color: #557570;
+  border: 2px solid #3D615B;
+  border-radius: 0.4rem;
+  padding: 0.6rem 1rem; }
 
 body {
   background-color: #9FAEAB; }

@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'soikka.apps.SoikkaConfig',
+    'customauth',
 
     'widget_tweaks',
 ]
@@ -123,6 +125,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # set static file root to project root
-STATICFILES_DIRS= [
+STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+
+# Set custom user model
+AUTH_USER_MODEL = 'customauth.MyUser'
+
+#Log in & log out redirect
+LOGOUT_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'home'

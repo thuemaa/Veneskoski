@@ -22,4 +22,5 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('soikka.urls')),
+    path('kylalaisille/', include('customauth.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
