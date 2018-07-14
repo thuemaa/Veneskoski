@@ -57,11 +57,11 @@ class UserAdmin(BaseUserAdmin):
     add_form = UserCreationForm
 
     list_display = ('email', 'first_name', 'last_name')
-    list_filter = ('is_admin',)
+    list_filter = ('is_admin', )
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
         ('Nimitiedot', {'fields': ('first_name', 'last_name')}),
-        ('Ylläpitäjä', {'fields': ('is_admin',)}),
+        ('Ylläpitäjä', {'fields': ('is_admin', )}),
     )
 
     add_fieldsets = (

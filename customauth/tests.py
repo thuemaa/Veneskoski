@@ -69,17 +69,18 @@ class LogInTests(TestCase):
         form = LogInForm(data=data)
         self.assertTrue(form.is_valid())
 
-    # test for incomplete data
+    # test for incomplete data and non field error for incomplete data
     def test_log_in_invalid_form(self):
 
         data = {'email': '', 'password': '123passu'}
         form = LogInForm(data=data)
+        response = self.client.post('/kylalaisille/', data)
         self.assertFalse(form.is_valid())
+        self.assertFormError(response, 'form', None, "Sähköposti- ja salasankenttä on täytettävä")
 
     # test non field errors
     def test_log_in_failure(self):
 
         data = {'email': 'testi@kase.com', 'password': '123passu'}
-        form = LogInForm(data=data)
         response = self.client.post('/kylalaisille/', data)
         self.assertFormError(response, 'form', None, "Sähköposti ja salasana ei täsmää!")

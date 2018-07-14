@@ -33,12 +33,17 @@ def log_in(request):
 # account creation
 def sign_up(request):
 
+    # redirect to another page if logged in
+
+    if request.user.is_authenticated:
+        return redirect('home')
+
     if request.method == 'POST':
         form = CreateUserForm(request.POST)
         if form.is_valid():
             # Create new user here
             new_user = form.save()
-            return redirect('homepage')
+            return redirect('home')
     else:
         form = CreateUserForm()
 
