@@ -61,7 +61,7 @@ class UserAdmin(BaseUserAdmin):
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
         ('Nimitiedot', {'fields': ('first_name', 'last_name')}),
-        ('Ylläpitäjä', {'fields': ('is_admin', )}),
+        ('Käyttöoikeudet', {'fields': ('is_admin', 'is_active', 'is_staff', 'is_superuser')}),
     )
 
     add_fieldsets = (
@@ -77,4 +77,3 @@ class UserAdmin(BaseUserAdmin):
 
 
 admin.site.register(MyUser, UserAdmin)
-admin.site.unregister(Group)

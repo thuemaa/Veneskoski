@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin, Group
 # Create your models here.
 
 class MyUserManager(BaseUserManager):
@@ -25,11 +25,12 @@ class MyUserManager(BaseUserManager):
         return user
 
 
-
-class MyUser(AbstractBaseUser):
+# Custom user model. Inherit PermissionsMixin
+class MyUser(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(max_length=255, unique=True)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
+    group = models.ManyToManyField(Group, blank=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_admin = models.BooleanField(default=False)
@@ -42,6 +43,7 @@ class MyUser(AbstractBaseUser):
     def __str__(self):
         return self.first_name + "_" + self.last_name
 
+    '''
     def has_perm(self, perm, obj = None):
         return True
 
@@ -51,4 +53,4 @@ class MyUser(AbstractBaseUser):
     @property
     def is_staff(self):
         return self.is_admin
-
+    '''
