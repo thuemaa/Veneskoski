@@ -7,9 +7,14 @@ from .models import Ajankohtaista
 
 # Homepage view
 def home(request):
-    return render(request, 'home.html')
+
+    # Get the necessary models for main page
+    # Get 5 latest ajankohtaista objects by date
+    ajankohtaista = Ajankohtaista.objects.all().order_by('-pvm')[:5]
+
+    return render(request, 'home.html', {'ajankohtaista': ajankohtaista})
 
 
-def ajankohtaista(request):
-    ak = Ajankohtaista.objects.last()
+def ajankohtaista(request, ak_pk):
+    ak = get_object_or_404(Ajankohtaista, pk=ak_pk)
     return render(request, 'ajankohtaista.html', {'ak': ak})
