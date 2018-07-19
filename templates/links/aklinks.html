@@ -1,0 +1,5 @@
+ {% for ak in ajankohtaista %}
+     <div class="inner_link">
+	     <a href="{% url 'ajankohtaista' ak_pk=ak.pk %}">{{ ak.otsikko }}</a>
+     </div>
+{% endfor %}

@@ -1,0 +1,38 @@
+{% load static %}
+{% load linktags %}
+
+
+{% block content %}
+<nav class="navbar">
+        <div class="logo_container"><a href="{% url "home" %}"><img src="{% static 'logo.png' %}" alt="logo"></a></div>
+        <div class="nav_button_div">
+            <a href="#" id="navbutton">☰</a>
+        </div>
+        <div class="nav_links_container">
+            <div class="link_div"><a href="#" id="ajankohtaista_a">Ajankohtaista</a>
+                <div class="inner_link_div" id="ajankohtaista_div">
+                    <!-- get links for 5 latest ajankohtaista objects with includetag -->
+					{% show_ak ajankohtaista %}
+                    <div class="inner_link"><a>Näytä lisää</a></div>
+                </div>
+            </div>
+            <div class="link_div"><a href="#" id="tapahtumat_a">Tapahtumat</a>
+                <!-- create links here in loop -->
+                <div class="inner_link_div" id="tapahtumat_div">
+                    <div class="inner_link"><a>Tapahtuma 1</a></div>
+                    <div class="inner_link"><a>Tapahtuma 2</a></div>
+                    <div class="inner_link"><a>Tapahtuma 3</a></div>
+                    <div class="inner_link"><a>Tapahtuma 4</a></div>
+                    <div class="inner_link"><a>Tapahtuma 5</a></div>
+                    <div class="inner_link"><a>Näytä lisää</a></div>
+                </div>
+            </div>
+            <div class="link_div"><a href="#">Kesäteatteri</a></div>
+            <div class="link_div"><a href="#">Valokuvia</a></div>
+            <div class="link_div"><a href="#">Vuokrattavana</a></div>
+            <div class="link_div"><a href="#">Yhdistykset</a></div>
+            <div class="link_div"><a href="#">Kartta</a></div>
+            <div class="link_div"><a href="{% url "log_in" %}">Kyläläisille</a></div>
+        </div>
+    </nav>
+{% endblock %}
