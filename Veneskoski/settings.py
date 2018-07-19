@@ -40,7 +40,8 @@ INSTALLED_APPS = [
 
     'soikka.apps.SoikkaConfig',
     'customauth',
-
+    
+    'tinymce',
     'widget_tweaks',
 ]
 
@@ -135,3 +136,6 @@ AUTH_USER_MODEL = 'customauth.MyUser'
 #Log in & log out redirect
 LOGOUT_REDIRECT_URL = 'home'
 LOGIN_REDIRECT_URL = 'home'
+
+#TINYMCE configs
+
