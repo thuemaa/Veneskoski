@@ -4,7 +4,6 @@ from django.contrib.auth import authenticate, login
 from .forms import CreateUserForm, LogInForm
 from .models import MyUser
 from .views import sign_up, log_in
-# Create your tests here.
 
 
 class SignUpTests(TestCase):
@@ -45,7 +44,7 @@ class SignUpTests(TestCase):
         form = CreateUserForm(data=fail_data)
         self.assertFalse(form.is_valid())
 
-
+# Tests for logging user in
 class LogInTests(TestCase):
 
     def setUp(self):
@@ -62,7 +61,7 @@ class LogInTests(TestCase):
             if login(user):
                 return True
 
-
+    # Test log in form validity
     def test_log_in_success(self):
 
         data = {'email': 'testi@kase.com', 'password': 'passu123' }

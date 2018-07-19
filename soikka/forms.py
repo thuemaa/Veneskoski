@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import User
 
-# THIS FORM IS NOT IN USE! Using customauth/forms instead.
+# THIS FORM FILE IS NOT IN USE! Using customauth/forms instead.
 
 # Form for creating user
 class SignUpForm(UserCreationForm):
