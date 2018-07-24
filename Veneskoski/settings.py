@@ -125,11 +125,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
 # set static file root to project root
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
-
 # Set custom user model
 AUTH_USER_MODEL = 'customauth.MyUser'
 
@@ -138,4 +138,12 @@ LOGOUT_REDIRECT_URL = 'home'
 LOGIN_REDIRECT_URL = 'home'
 
 #TINYMCE configs
-
+TINYMCE_DEFAULT_CONFIG = {
+    'theme': 'advanced',
+    'plugins': "advlist, advlink, wordcount, preview",
+    'theme_advanced_buttons1': 'formatselect, bold, italic, underline, separator, bullist, numlist, link, unlink, image',
+    'theme_advanced_buttons2': 'justifyleft, justifycenter, justifyright, justifyfull, separator, indent, outdent',
+    'theme_advanced_buttons3': 'undo, redo, separator, cut, copy, paste, preview',
+    'width': '100%',
+    'height': 1024
+}
