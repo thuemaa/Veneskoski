@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'grappelli',
+    'filebrowser',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -137,13 +139,18 @@ AUTH_USER_MODEL = 'customauth.MyUser'
 LOGOUT_REDIRECT_URL = 'home'
 LOGIN_REDIRECT_URL = 'home'
 
-#TINYMCE configs
+# TINYMCE configs
 TINYMCE_DEFAULT_CONFIG = {
     'theme': 'advanced',
-    'plugins': "advlist, advlink, wordcount, preview",
-    'theme_advanced_buttons1': 'formatselect, bold, italic, underline, separator, bullist, numlist, link, unlink, image',
+    'plugins': "advlist, advlink, wordcount, preview, table",
+    'theme_advanced_buttons1': 'formatselect, bold, italic, underline, separator, table, bullist, numlist, link, unlink, image',
     'theme_advanced_buttons2': 'justifyleft, justifycenter, justifyright, justifyfull, separator, indent, outdent',
     'theme_advanced_buttons3': 'undo, redo, separator, cut, copy, paste, preview',
     'width': '100%',
     'height': 1024
 }
+
+# Grappelli configs
+GRAPPELLI_ADMIN_TITLE = "Veneskoski"
+
+# Filebrowser configs

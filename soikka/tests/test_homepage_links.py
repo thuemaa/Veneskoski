@@ -1,27 +1,25 @@
 from django.test import TestCase
 from django.urls import reverse, resolve
 from datetime import datetime
-from .views import home, ajankohtaista 
-from .models import Ajankohtaista
+from soikka.views import home, ajankohtaista
+from soikka.models import Ajankohtaista
 '''
 TEST:
 
     LINKS: home, kylalaisille,
     MODELS: Ajankohtaista, Kuva, Tapahtuma, Kesateatteri, Vuokrattavana
-    
-    howto status code test
 '''
 
 class HomePageLinksTests(TestCase):
     
-    #create necessary models for link testing
+    # create necessary models for link testing
     def setUp(self):
         # create 5 ajankohtaista objects
         for i in range(0, 5):
             Ajankohtaista.objects.create(otsikko='Otsikko '+str(i), teksti='Teksti ' + str(1), pvm=datetime.now())
 
     def test_homepage_status_code(self):
-        ''' Test status code for homepage'''
+        """Test status code for homepage"""
         url = reverse('home')
         response = self.client.get(url)
         self.assertEquals(response.status_code, 200)

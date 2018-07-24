@@ -18,8 +18,11 @@ from django.urls import path, include
 from django.conf import settings
 #development static file handling:
 from django.conf.urls.static import static
+from filebrowser.sites import site as filebrowser_sites
 
 urlpatterns = [
+    path('admin/filebrowser/', filebrowser_sites.urls),
+    path('grappelli/', include('grappelli.urls')),
     path('admin/', admin.site.urls),
     path('', include('soikka.urls')),
     path('kylalaisille/', include('customauth.urls')),
