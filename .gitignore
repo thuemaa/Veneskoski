@@ -5,3 +5,5 @@ boards/
 .idea/
 venv/
 muistiinpanot/
+media/
+*/migrations/

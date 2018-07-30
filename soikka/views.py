@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Ajankohtaista
+from .models import Ajankohtaista, Tapahtuma
 
 # Homepage view
 def home(request):
@@ -17,3 +17,8 @@ def ajankohtaista(request, ak_pk):
     '''Get the ajankohtaista object by primary key and pass it to template'''
     ajank = get_object_or_404(Ajankohtaista, pk=ak_pk)
     return render(request, 'ajankohtaista.html', {'ak': ajank})
+
+def tapahtumat(request, tapahtuma_pk):
+    '''Get the tapahtuma object by primary key and pass it to template'''
+    tapahtuma = get_object_or_404(Tapahtuma, pk=tapahtuma_pk)
+    return render(request, 'tapahtuma.html', {'tapahtuma': tapahtuma})

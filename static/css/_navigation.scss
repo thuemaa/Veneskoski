@@ -71,6 +71,8 @@ nav a {
   /*adjust this for outer links to appear right on the border of upper link div*/
   left: 14.04rem;
   background-color: $nav-color;
+  display: flex;
+  flex-direction: column;
 
   a {
       font-size: 1.8rem;
