@@ -6,4 +6,4 @@ boards/
 venv/
 muistiinpanot/
 media/
-*/migrations/
+*/migrations/*

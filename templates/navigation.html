@@ -13,14 +13,14 @@
                 <div class="inner_link_div" id="ajankohtaista_div">
                     <!-- get links for 5 latest ajankohtaista objects with includetag -->
 					{% show_ak ajankohtaista %}
-                    <div class="inner_link"><a>Näytä lisää</a></div>
+                    <div class="inner_link"><a href="{% url 'ajankohtaista' %}">Näytä lisää</a></div>
                 </div>
             </div>
             <div class="link_div"><a href="#" id="tapahtumat_a">Tapahtumat</a>
                 <!-- create links here in loop -->
                 <div class="inner_link_div" id="tapahtumat_div">
                     {% show_tapahtuma tapahtuma %}
-                    <div class="inner_link"><a>Näytä lisää</a></div>
+                    <div class="inner_link"><a href="{% url 'tapahtumat' %}">Näytä lisää</a></div>
                 </div>
             </div>
             <div class="link_div"><a href="#">Kesäteatteri</a></div>
