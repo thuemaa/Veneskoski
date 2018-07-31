@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Ajankohtaiset artikkelit aikajärjestyksessä</h2>
+    {% for ak in all_ak %}
+        <ul>
+            <li><span style="font-weight: bold"><a href="{% url 'ajankohtaista' ak_pk=ak.pk %}">{{ ak.otsikko }}</a></span>
+               <small>{{ ak.kuvaus }}</small>
+               <small>{{ ak.pvm }}</small>
+            </li>
+        </ul>
+    {% endfor %}
+{% endblock %}

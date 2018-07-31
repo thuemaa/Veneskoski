@@ -31,6 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'grappelli',
+    'filebrowser',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,7 +43,8 @@ INSTALLED_APPS = [
 
     'soikka.apps.SoikkaConfig',
     'customauth',
-
+    
+    'tinymce',
     'widget_tweaks',
 ]
 
@@ -124,14 +128,40 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # set static file root to project root
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
-
 # Set custom user model
 AUTH_USER_MODEL = 'customauth.MyUser'
 
 #Log in & log out redirect
 LOGOUT_REDIRECT_URL = 'home'
 LOGIN_REDIRECT_URL = 'home'
+
+# TINYMCE configs
+# TODO: CHANGE DOCUMENT BASE URL WHEN IN SERVER
+# NOT IN USE: tinymce_js_url changes tinymce editor to grappelli skin
+# TINYMCE_JS_URL = STATIC_URL +'grappelli/tinymce/jscripts/tiny_mce/tiny_mce.js'
+
+TINYMCE_DEFAULT_CONFIG = {
+    'theme': 'advanced',
+    'plugins': "advlist, wordcount, preview, table",
+    'theme_advanced_buttons1': 'formatselect, bold, italic, underline, separator, table, bullist, numlist, link, unlink, image',
+    'theme_advanced_buttons2': 'justifyleft, justifycenter, justifyright, justifyfull, separator, indent, outdent',
+    'theme_advanced_buttons3': 'undo, redo, separator, cut, copy, paste, preview',
+    'width': '100%',
+    'height': 1024,
+    'relative_urls': False,
+    'remove_script_host': True,
+    'document_base_url': '127.0.0.1:8000',
+}
+
+# Grappelli configs
+GRAPPELLI_ADMIN_TITLE = "Veneskoski"
+
+# Filebrowser configs
+FILEBROWSER_DIRECTORY = 'uploads/'
+FILEBROWSER_VERSIONS_BASEDIR = '_versions/'

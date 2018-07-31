@@ -1,0 +1,5 @@
+{% for tapahtuma in tapahtumat %}
+     <div class="inner_link">
+	     <a href="{% url 'tapahtumat' tapahtuma_pk=tapahtuma.pk %}">{{ tapahtuma.otsikko }}</a>
+     </div>
+{% endfor %}

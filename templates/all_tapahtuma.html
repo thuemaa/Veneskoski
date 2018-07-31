@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Kaikki tapahtumat aikajärjestyksessä</h2>
+    {% for tapahtuma in all_tapahtuma %}
+        <ul>
+           <li><span style="font-weight: bold">
+               <a href="{% url 'tapahtumat' tapahtuma_pk=tapahtuma.pk %}">{{ tapahtuma.otsikko }}</a>
+                </span>
+               <small>{{ tapahtuma.kuvaus }}</small>
+               <small>{{ tapahtuma.pvm }}</small>
+            </li>
+        </ul>
+    {% endfor %}
+{% endblock %}

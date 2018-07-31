@@ -16,11 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
-#development static file handling:
+# development static file handling:
 from django.conf.urls.static import static
+from filebrowser.sites import site as filebrowser_sites
 
 urlpatterns = [
+    path('admin/filebrowser/', filebrowser_sites.urls),
+    path('grappelli/', include('grappelli.urls')),
     path('admin/', admin.site.urls),
     path('', include('soikka.urls')),
     path('kylalaisille/', include('customauth.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path('tinymce/', include('tinymce.urls')),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
