@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Ajankohtaista, Tapahtuma
+from django.core.paginator import Paginator
+from .models import Ajankohtaista, Tapahtuma, Valokuva
 
 # Homepage view
 def home(request):
@@ -33,3 +34,12 @@ def tapahtumat(request, tapahtuma_pk=None):
     else:
         all_tapahtuma = Tapahtuma.objects.all().order_by('-pvm')
         return render(request, 'all_tapahtuma.html', {'all_tapahtuma': all_tapahtuma})
+
+
+def valokuvat(request):
+    """Show list of valokuva objects."""
+    all_valokuvat = Valokuva.objects.all().order_by('-pvm')
+    pagi = Paginator(all_valokuvat, 10)
+    page = request.GET.get('page')
+    valokuvat = pagi.get_page(page)
+    return render(request, 'valokuvat.html', {'valokuvat': valokuvat})

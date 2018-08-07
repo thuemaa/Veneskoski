@@ -1,0 +1,79 @@
+$image-div-color: #c3d3d0;
+$image-border-color: #3d4c49;
+$margin-size: 25px;
+.images_flex_container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-top: 0.3rem;
+  align-items: center;
+}
+
+.image_div {
+  display: inline-flex;
+  flex-direction: column;
+  margin: 4rem $margin-size;
+  background-color: $image-div-color;
+  border: 0.2rem solid $image-border-color;
+  border-radius: 1rem;
+  overflow: hidden;
+  max-width: 450px;
+  object-fit: contain;
+
+    img {
+      /*prevents image from stretching when using small screen*/
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      object-fit: contain;
+    }
+}
+
+.image_div_mouseover {
+  display: flex;
+  flex-direction: column;
+  margin: 4rem $margin-size;
+  background-color: $image-div-color;
+  border: 0.2rem solid $image-border-color;
+  box-shadow: 5px 8px 35px #3d4c49;
+  border-radius: 1rem;
+  overflow: hidden;
+  max-width: 450px;
+  object-fit: contain;
+
+  img {
+      /*prevents image from stretching when using small screen*/
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      object-fit: contain;
+    }
+}
+
+.image_div_margin {
+  /*NOT IN USE*/
+  display: flex;
+  flex-direction: column;
+  margin: 4rem $margin-size + $margin-size;
+  background-color: $image-div-color;
+  border: 0.2rem solid $image-border-color;
+  border-radius: 1rem;
+  overflow: hidden;
+  max-width: 450px;
+  object-fit: contain;
+
+  img {
+      /*prevents image from stretching when using small sceen*/
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      object-fit: contain;
+    }
+}
+
+.image_header {
+  margin: auto;
+}
