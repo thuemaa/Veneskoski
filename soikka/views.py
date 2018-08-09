@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import Paginator
 from .models import Ajankohtaista, Tapahtuma, Valokuva
@@ -43,3 +43,15 @@ def valokuvat(request):
     page = request.GET.get('page')
     valokuvat = pagi.get_page(page)
     return render(request, 'valokuvat.html', {'valokuvat': valokuvat})
+
+
+def ajax_image(request):
+    """return image using ajax"""
+    image_pk = request.GET['image_pk']
+    valokuva = get_object_or_404(Valokuva, pk=image_pk)
+    data = {
+        'otsikko': valokuva.otsikko,
+        'kuvaus': valokuva.kuvaus,
+        'kuva': valokuva.kuva.url
+    }
+    return JsonResponse(data)

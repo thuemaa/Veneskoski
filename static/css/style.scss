@@ -9,6 +9,11 @@ body {
   background-color: $bg-color;
 }
 
+.content_div {
+  margin: auto 2rem;
+}
+
 .maindiv {
-    margin: auto 2rem;
+    //margin: auto 2rem;
+    margin: 0;
 }
