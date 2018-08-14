@@ -66,3 +66,8 @@ class HomePageLinksTests(TestCase):
         for i in range(1, 6):
             page = resolve('/tapahtumat/' + str(i) + '/')
             self.assertEquals(page.func, tapahtumat)
+
+    def test_valokuva_status_code(self):
+        url = reverse('valokuvat')
+        response = self.client.get(url)
+        self.assertEquals(response.status_code, 200)

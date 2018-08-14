@@ -58,4 +58,3 @@ class Kesateatteri_naytelma(models.Model):
     naytos_alku = models.DateField(auto_now_add=False)
     naytos_loppu = models.DateField(auto_now_add=False)
 
-

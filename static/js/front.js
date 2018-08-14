@@ -38,9 +38,7 @@ $(document).ready(function() {
     //open the image
     $(".image_div").click(function() {
         console.log("painoit tästä: " + $(this).find("img").attr("id") );
-
         var image_pk = $(this).find("img").attr("id");
-
         $.ajax({
             url: '/ajax/image/',
             data: {
@@ -54,13 +52,21 @@ $(document).ready(function() {
             }
         });
 
-
-        $(".large_image_background").toggle();
+        $(".large_image_background").show();
     });
 
     $(".close_image_icon").click(function() {
         console.log("painoit tästä: " + $(this).find("img").attr("id") );
         $(".large_image_background").toggle();
+    });
+
+    $(document).mouseup(function(e)
+    {
+        var img_div = $(".large_image_div").find("img");
+        if (!img_div.is(e.target) && img_div.has(e.target).length === 0)
+        {
+            $(".large_image_background").hide();
+        }
     });
 });
 

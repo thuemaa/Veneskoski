@@ -16,7 +16,8 @@ def log_in(request):
         if user is not None:
 
             login(request, user)
-            return redirect("home")
+            # Redirect to logged in users main page"
+            return redirect("kylaindex")
 
         elif form.is_valid():
             form.add_error(None, "Sähköposti ja salasana ei täsmää!")
