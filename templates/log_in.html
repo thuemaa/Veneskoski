@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-
+<div class="content_div">
     {%  if not user.is_authenticated %}
     <h2>Kirjaudu sisään</h2>
     <form method="POST" novalidate>
@@ -16,4 +16,5 @@
     {% else %}
     <h2>Olet kirjautunut sisään!</h2>
     {% endif %}
+</div>
 {% endblock %}

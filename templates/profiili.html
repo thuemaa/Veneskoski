@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="center_div">
+    <h2>{{user.first_name}} {{user.last_name}}</h2>
+    <a href="" class="button_link">Ilmottaudutut tapahtumat</a>
+    <a href="" class="button_link">Omat kauppailmoitukset</a>
+    <a href="" class="button_link">Muuta tietoja</a>
+    <a href="{% url 'log_out' %}" class="button_link">Kirjaudu ulos</a>
+</div>
+
+{% endblock %}

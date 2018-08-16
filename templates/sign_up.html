@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+    <div class="content_div">
     <h2>Luo käyttäjätunnus</h2>
     <form method="POST" novalidate>
         {% csrf_token %}
         {% include 'includes/form.html' %}
         <button type="submit" class="form_button">Luo käyttäjätunnus</button>
     </form>
+    </div>
 {% endblock %}

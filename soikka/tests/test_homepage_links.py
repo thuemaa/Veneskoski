@@ -39,23 +39,35 @@ class HomePageLinksTests(TestCase):
         self.assertEquals(page.func, home)
     
     def test_anakohtaista_status_code(self):
-        url = reverse('ajankohtaista', kwargs={'ak_pk': 1})
-        response = self.client.get(url)
-        self.assertEquals(response.status_code, 200)
+        for i in range(1, 7):
+            url = reverse('ajankohtaista', kwargs={'ak_pk': i})
+            response = self.client.get(url)
+            if i == 6:
+                self.assertEquals(response.status_code, 404)
+            else:
+                self.assertEquals(response.status_code, 200)
 
     def test_ajankohtaista_view_func(self):
-        # ak = Ajankohtaista.objects.all().order_by('-pvm')[:5]
-        # ak_pk = ak[0].pk
         for i in range(1, 6):
             page = resolve('/ajankohtaista/' + str(i) + '/')
             self.assertEquals(page.func, ajankohtaista)
 
     def test_tapahtuma_status_code(self):
-        url = reverse('tapahtumat', kwargs={'tapahtuma_pk': 1})
-        response = self.client.get(url)
-        self.assertEquals(response.status_code, 200)
+        for i in range(1, 7):
+            url = reverse('tapahtumat', kwargs={'tapahtuma_pk': i})
+            response = self.client.get(url)
+            if i == 6:
+                self.assertEquals(response.status_code, 404)
+            else:
+                self.assertEquals(response.status_code, 200)
+
 
     def test_tapahtuma_view_func(self):
         for i in range(1, 6):
             page = resolve('/tapahtumat/' + str(i) + '/')
             self.assertEquals(page.func, tapahtumat)
+
+    def test_valokuva_status_code(self):
+        url = reverse('valokuvat')
+        response = self.client.get(url)
+        self.assertEquals(response.status_code, 200)

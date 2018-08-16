@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{%  load fb_versions %}
+
+{% block content %}
+    <div class="images_flex_container">
+    {% for valokuva in valokuvat %}
+        <div class="image_div">
+            <img src="{% version valokuva.kuva 'large' %}" id="{{ valokuva.pk }}">
+            <span class="image_header">{{ valokuva.otsikko }}</span>
+        </div>
+    {% endfor %}
+    </div>
+    <!-- div for full image, hidden until image chosen -->
+    <div class="large_image_background">
+        <div class="large_image_div">
+            <!-- <span class="close_image_icon">Sulje</span> -->
+            <img src="">
+            <h2>otsikko pleisholder</h2>
+            <span class="large_kuvaus">kuvaus pleisholder</span>
+        </div>
+    </div>
+{% endblock %}

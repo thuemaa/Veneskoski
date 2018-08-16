@@ -8,4 +8,7 @@ urlpatterns = [
     path('ajankohtaista/', views.ajankohtaista, name='ajankohtaista'),
     path('tapahtumat/<int:tapahtuma_pk>/', views.tapahtumat, name='tapahtumat'),
     path('tapahtumat/', views.tapahtumat, name='tapahtumat'),
+    path('valokuvat/<int:valokuva_pk>/', views.valokuvat, name='valokuvat'),
+    path('valokuvat/', views.valokuvat, name='valokuvat'),
+    path('ajax/image/', views.ajax_image, name='ajax_image'),
 ]

@@ -16,6 +16,58 @@ $(document).ready(function() {
     $("#tapahtumat_a").click(function() {
         toggleElement(this.id);
     });
+
+    /*image mouseover funcs*/
+    $(".image_div").mouseover(function() {
+        //console.log("toimii");
+        $(this).attr("class", "image_div_mouseover");
+        //$(this).next().attr("class", "image_div_margin");
+        //$(this).prev().attr("class", "image_div_margin");
+        //$(".image_div").not(this).attr("class", "image_div_small");
+    });
+
+
+    $(".image_div").mouseout(function() {
+        //console.log("toimii");
+        $(this).attr("class", "image_div");
+        //$(this).next().attr("class", "image_div");
+        //$(this).prev().attr("class", "image_div");
+        //$(".image_div").not(this).attr("class", "image_div");
+    });
+
+    //open the image
+    $(".image_div").click(function() {
+        console.log("painoit tästä: " + $(this).find("img").attr("id") );
+        var image_pk = $(this).find("img").attr("id");
+        $.ajax({
+            url: '/ajax/image/',
+            data: {
+                'image_pk': image_pk
+           },
+            dataType: 'json',
+            success: function(data) {
+                $(".large_image_div").find("h2").text(data.otsikko);
+                $(".large_image_div").find(".large_kuvaus").text(data.kuvaus);
+                $(".large_image_div").find("img").attr("src", data.kuva);
+            }
+        });
+
+        $(".large_image_background").show();
+    });
+
+    $(".close_image_icon").click(function() {
+        console.log("painoit tästä: " + $(this).find("img").attr("id") );
+        $(".large_image_background").toggle();
+    });
+
+    $(document).mouseup(function(e)
+    {
+        var img_div = $(".large_image_div").find("img");
+        if (!img_div.is(e.target) && img_div.has(e.target).length === 0)
+        {
+            $(".large_image_background").hide();
+        }
+    });
 });
 
 /*click function for toggling navbar elements*/

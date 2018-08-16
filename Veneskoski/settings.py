@@ -138,8 +138,9 @@ STATICFILES_DIRS = [
 AUTH_USER_MODEL = 'customauth.MyUser'
 
 #Log in & log out redirect
+LOGIN_URL = '/kylalaiset/login'
 LOGOUT_REDIRECT_URL = 'home'
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = '/kylalaiset/profiili'
 
 # TINYMCE configs
 # TODO: CHANGE DOCUMENT BASE URL WHEN IN SERVER

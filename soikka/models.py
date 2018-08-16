@@ -24,10 +24,16 @@ class Tapahtuma(models.Model):
     kuvaus = models.TextField(max_length=1000)
     teksti = tinymce_models.HTMLField()
     pvm = models.DateTimeField(auto_now_add=False, default=datetime.now)
-    tekija = models.ForeignKey(MyUser, related_name='user_tapahtumat', on_delete=models.CASCADE)
+    tekija = models.ForeignKey(MyUser, related_name='user_tapahtumat', on_delete=models.CASCADE)    
 
     def __str__(self):
         return self.otsikko
+
+class TapahtumaOsallistuja(models.Model):
+    """Model for tapahtuma (event) attendee"""
+    tapahtuma = models.ForeignKey(Tapahtuma, on_delete=models.CASCADE)
+    osallistuja = models.ForeignKey(MyUser, on_delete=models.CASCADE)
+    ilmottautumis_aika = models.DateTimeField(auto_now_add=False, default=datetime.now)
 
 class Valokuva(models.Model):
     """model for valokuva, image object"""
@@ -57,5 +63,4 @@ class Kesateatteri_naytelma(models.Model):
     sisalto = tinymce_models.HTMLField()
     naytos_alku = models.DateField(auto_now_add=False)
     naytos_loppu = models.DateField(auto_now_add=False)
-
 

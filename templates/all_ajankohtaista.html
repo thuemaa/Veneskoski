@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+<div class="content_div">
     <h2>Ajankohtaiset artikkelit aikajärjestyksessä</h2>
     {% for ak in all_ak %}
         <ul>
@@ -9,4 +10,5 @@
             </li>
         </ul>
     {% endfor %}
+</div>
 {% endblock %}

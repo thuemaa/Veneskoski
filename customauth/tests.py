@@ -16,7 +16,7 @@ class SignUpTests(TestCase):
 
     # test sign up page resolve
     def test_signup_resolve(self):
-        view = resolve('/kylalaisille/signup/')
+        view = resolve('/kylalaiset/signup/')
         self.assertEquals(view.func, sign_up)
 
     #test account creation
@@ -73,7 +73,7 @@ class LogInTests(TestCase):
 
         data = {'email': '', 'password': '123passu'}
         form = LogInForm(data=data)
-        response = self.client.post('/kylalaisille/', data)
+        response = self.client.post('/kylalaiset/login/', data)
         self.assertFalse(form.is_valid())
         self.assertFormError(response, 'form', None, "Sähköposti- ja salasankenttä on täytettävä")
 
@@ -81,5 +81,5 @@ class LogInTests(TestCase):
     def test_log_in_failure(self):
 
         data = {'email': 'testi@kase.com', 'password': '123passu'}
-        response = self.client.post('/kylalaisille/', data)
+        response = self.client.post('/kylalaiset/login/', data)
         self.assertFormError(response, 'form', None, "Sähköposti ja salasana ei täsmää!")
