@@ -2,9 +2,15 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import User
 
-# THIS FORM FILE IS NOT IN USE! Using customauth/forms instead.
 
-# Form for creating user
+class TapahtumaAttendForm(forms.Form):
+    pass
+
+class TapahtumaUnanttendForm(forms.Form):
+    pass
+
+# Form for creating user. NOT IN USE
+"""
 class SignUpForm(UserCreationForm):
 
     email_errors = {
@@ -56,3 +62,4 @@ class SignUpForm(UserCreationForm):
                 'required': "an ny joku sala sana",
         }
 
+"""

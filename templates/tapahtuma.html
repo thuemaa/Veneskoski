@@ -4,6 +4,13 @@
     <h2>{{ tapahtuma.otsikko }}</h2>
     <p>{{ tapahtuma.teksti|safe }}</p>
     <h4>{{ tapahtuma.pvm }}</h4>
+    <!--- check if user is authenticated and is (s)he attending the event --->
+    <input type="hidden" id="tapahtuma_hidden" value="{{ tapahtuma.pk }}">
+    {% if user_attending %}
+        <a href="{% url 'tapahtuma_peru' tapahtuma_pk=tapahtuma.pk%}"><span>Peru osallistumine</span></a></br>
+    {% elif user.is_authenticated %}
+        <a href="{% url 'tapahtuma_osallistu' tapahtuma_pk=tapahtuma.pk%}"><span>Osallistu</span></a></br>
+    {% endif %}
     {% for os in osallistujat %}
     <span>{{os.osallistuja.first_name}}</span></br>
     {% endfor %}

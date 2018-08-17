@@ -33,7 +33,7 @@ class TapahtumaOsallistuja(models.Model):
     """Model for tapahtuma (event) attendee"""
     tapahtuma = models.ForeignKey(Tapahtuma, on_delete=models.CASCADE)
     osallistuja = models.ForeignKey(MyUser, on_delete=models.CASCADE)
-    ilmottautumis_aika = models.DateTimeField(auto_now_add=False, default=datetime.now)
+    ilmottautumis_aika = models.DateTimeField(auto_now_add=True)
 
 class Valokuva(models.Model):
     """model for valokuva, image object"""
