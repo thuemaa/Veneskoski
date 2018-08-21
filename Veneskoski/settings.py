@@ -43,7 +43,7 @@ INSTALLED_APPS = [
 
     'soikka.apps.SoikkaConfig',
     'customauth',
-    
+    'kylalaiset',
     'tinymce',
     'widget_tweaks',
 ]

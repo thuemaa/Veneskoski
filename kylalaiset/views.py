@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from customauth.models import MyUser
 import customauth.views as auth_views
-
+from .models import Markkina
 
 def kylaindex(request):
     '''index for kylalaiset app, redirect to login if not logged in'''
@@ -21,3 +21,8 @@ def kayttaja(request):
     #kokonimi = kayttaja.first_name + " " + kayttaja.last_name
     return render(request, 'profiili.html', {'user': kayttaja})
     #return HttpResponse(kokonimi)
+
+@login_required
+def markkina(request):
+    kaikki_ilmoitukset = Markkina.objects.all().order_by('-pk')
+    return render(request, 'markkina.html', {'kaikki_imoitukset': kaikki_ilmoitukset})

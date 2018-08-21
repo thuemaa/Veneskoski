@@ -198,6 +198,9 @@ body {
 
 .content_div {
   margin: auto 2rem; }
+  .content_div img {
+    max-width: 80vw;
+    object-fit: contain; }
 
 .maindiv {
   margin: 0; }

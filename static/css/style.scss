@@ -11,6 +11,11 @@ body {
 
 .content_div {
   margin: auto 2rem;
+
+  img {
+    max-width: 80vw;
+    object-fit: contain;
+  }
 }
 
 .maindiv {
