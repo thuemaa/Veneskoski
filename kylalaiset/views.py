@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from customauth.models import MyUser
 import customauth.views as auth_views
 from .models import Markkina
+from .forms import MarkkinaForm
 
 def kylaindex(request):
     '''index for kylalaiset app, redirect to login if not logged in'''
@@ -23,6 +24,27 @@ def kayttaja(request):
     #return HttpResponse(kokonimi)
 
 @login_required
-def markkina(request):
+def markkina(request, ilmoitus_pk=None):
+    """get all markkina objects or a single one if arg"""
+    if ilmoitus_pk:
+        ilmoitus = get_object_or_404(Markkina, pk=ilmoitus_pk)
+        return render(request, 'markkina.html', {'ilmoitus': ilmoitus})
+
     kaikki_ilmoitukset = Markkina.objects.all().order_by('-pk')
-    return render(request, 'markkina.html', {'kaikki_imoitukset': kaikki_ilmoitukset})
+    return render(request, 'all_markkina.html', {'kaikki_imoitukset': kaikki_ilmoitukset})
+
+@login_required
+def uusi_markkina(request):
+    """form page for markkina object"""
+    if request.method == 'POST':
+        form = MarkkinaForm(request.POST, request.FILES)
+        if form.is_valid():
+            image = form.save(commit=False)
+            image.ilmoittaja = request.user
+            image.save()
+
+            return redirect('markkina')
+    else:
+        form = MarkkinaForm()
+
+    return render(request, 'uusi_markkina.html', {'form': form})

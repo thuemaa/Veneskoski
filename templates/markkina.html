@@ -1,17 +1,12 @@
 {% extends 'base.html' %}
-{%  load fb_versions %}
 
 {% block content %}
-    <div class="images_flex_container">
-    {% for ilmo in kaikki_imoitukset %}
-        <div class="image_div">
-            <h3>{{ ilmo.otsikko }}</h3>
-            <span>{{ ilmo.ilmoitustyyppi }}</span>
-            <span>{{ ilmo.pvm }}</span>
-            <img src="{% version ilmo.kuva 'large' %}" id="{{ ilmo.pk }}">
-            <span>{{ ilmo.teksti }}</span>
-            <span>{{ ilmo.ilmoittaja }}</span>
-        </div>
-    {% endfor %}
+    <div class="market_big_div">
+        <h3>{{ ilmoitus.otsikko }}</h3>
+        <span>{{ ilmoitus.ilmoitustyyppi }}</span>
+        <span>{{ ilmoitus.pvm }}</span>
+        <img src="{{ ilmoitus.kuva.url }}" id="{{ ilmoitus.pk }}">
+        <span>{{ ilmoitus.teksti }}</span>
+        <span>{{ ilmoitus.ilmoittaja }}</span>
     </div>
-{% endblock %}
+{%  endblock %}
