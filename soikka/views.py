@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
-from django.core.paginator import Paginator
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.contrib.auth.decorators import login_required
 from datetime import datetime
 from .models import Ajankohtaista, Tapahtuma, Valokuva, TapahtumaOsallistuja
@@ -47,7 +47,10 @@ def tapahtumat(request, tapahtuma_pk=None):
         return render(request, 'tapahtuma.html', {'tapahtuma': tapahtuma,
             'osallistujat': osallistujat, 'user_attending': user_attending})
     else:
-        all_tapahtuma = Tapahtuma.objects.all().order_by('-pvm')
+        kaikki_tapahtumat = Tapahtuma.objects.all().order_by('-pvm')
+        paginator = Paginator(kaikki_tapahtumat, 15)
+        page = request.GET.get('sivu', 1)
+        all_tapahtuma = paginator.get_page(page)
         return render(request, 'all_tapahtuma.html', {'all_tapahtuma': all_tapahtuma})
 
 @login_required
