@@ -23,7 +23,10 @@ def ajankohtaista(request, ak_pk=None):
         ajank = get_object_or_404(Ajankohtaista, pk=ak_pk)
         return render(request, 'ajankohtaista.html', {'ak': ajank})
     else:
-        all_ak = Ajankohtaista.objects.all().order_by('-pvm')
+        kaikki_ajankohtaista = Ajankohtaista.objects.all().order_by('-pvm')
+        paginator = Paginator(kaikki_ajankohtaista, 20)
+        page = request.GET.get('sivu', 1)
+        all_ak = paginator.get_page(page)
         return render(request, 'all_ajankohtaista.html', {'all_ak': all_ak})
 
 
@@ -48,10 +51,11 @@ def tapahtumat(request, tapahtuma_pk=None):
             'osallistujat': osallistujat, 'user_attending': user_attending})
     else:
         kaikki_tapahtumat = Tapahtuma.objects.all().order_by('-pvm')
-        paginator = Paginator(kaikki_tapahtumat, 15)
+        paginator = Paginator(kaikki_tapahtumat, 20)
         page = request.GET.get('sivu', 1)
         all_tapahtuma = paginator.get_page(page)
-        return render(request, 'all_tapahtuma.html', {'all_tapahtuma': all_tapahtuma})
+        otsikko = "Kaikki tapahtumat aikajärjestyksessä"
+        return render(request, 'all_tapahtuma.html', {'all_tapahtuma': all_tapahtuma, 'otsikko': otsikko})
 
 @login_required
 def tapahtuma_osallistu(request, tapahtuma_pk):
@@ -74,7 +78,7 @@ def valokuvat(request):
     """Show list of valokuva objects."""
     all_valokuvat = Valokuva.objects.all().order_by('-pvm')
     pagi = Paginator(all_valokuvat, 10)
-    page = request.GET.get('page')
+    page = request.GET.get('sivu')
     valokuvat = pagi.get_page(page)
     return render(request, 'valokuvat.html', {'valokuvat': valokuvat})
 

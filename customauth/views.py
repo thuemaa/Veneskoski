@@ -28,7 +28,7 @@ def log_in(request):
     else:
         form = LogInForm()
 
-    return render(request, 'log_in.html', {'form': form,})
+    return render(request, 'log_in.html', {'form': form})
 
 
 # account creation
