@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .forms import CreateUserForm, LogInForm
-from django.contrib.auth import authenticate, login
-
+from .forms import CreateUserForm, LogInForm, EditUserForm
+from django.contrib.auth import authenticate, login, update_session_auth_hash
+from django.contrib.auth.decorators import login_required
 
 # function for logging in
 def log_in(request):
@@ -47,5 +47,29 @@ def sign_up(request):
             return redirect('home')
     else:
         form = CreateUserForm()
+
+    return render(request, 'sign_up.html', {'form': form})
+
+
+@login_required
+def edit_user(request):
+
+    user = request.user
+
+    if request.method == 'POST':
+
+        form = EditUserForm(request.POST, instance=user)
+
+        if user.check_password('{}'.format(request.POST.get("old_password"))) == False:
+            form.set_wrong_password_flag()
+
+        if form.is_valid():
+            form.save()
+            update_session_auth_hash(request, user)
+            return redirect('kayttaja')
+
+    else:
+        form = EditUserForm(instance=user)
+        return render(request, 'sign_up.html', {'form': form})
 
     return render(request, 'sign_up.html', {'form': form})

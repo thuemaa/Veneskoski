@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="content_div">
+    <h1>{{ kesateatteri.otsikko }}</h1>
+    <p>{{ kesateatteri.sisalto|safe }}</p>
+    <span>Päivitetty: {{ kesateatteri.paivitetty }}</span>
+    <a href="{% url 'naytelmat' %}">Kesäteatterissa esitetyt näytelmät</a>
+    </div>
+{% endblock %}

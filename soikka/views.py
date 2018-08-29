@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.contrib.auth.decorators import login_required
 from datetime import datetime
-from .models import Ajankohtaista, Tapahtuma, Valokuva, TapahtumaOsallistuja
+from .models import Ajankohtaista, Tapahtuma, Valokuva, TapahtumaOsallistuja, Vuokrattavana, Kesateatteri, Kesateatteri_naytelma
 
 # Homepage view
 def home(request):
@@ -93,3 +93,30 @@ def ajax_image(request):
         'kuva': valokuva.kuva.url
     }
     return JsonResponse(data)
+
+
+def vuokrattavana(request):
+    """get only the latest object"""
+    vuokrattavana = Vuokrattavana.objects.last()
+    return render(request, 'vuokrattavana.html', {'vuokrattavana': vuokrattavana})
+
+def kesateatteri(request):
+    """Get only the latest view"""
+    kesateatteri = Kesateatteri.objects.last()
+    return render(request, 'kesateatteri.html', {'kesateatteri': kesateatteri})
+
+
+def kesateatteri_naytelmat(request, naytelma_pk=None):
+    """return of a list of all naytelma objects if no args given, or return a single naytelma"""
+    if not naytelma_pk:
+        """get all naytelma objects orderer by date, paginate them"""
+        all_naytelmat = Kesateatteri_naytelma.objects.all().order_by('-naytos_loppu')
+        pagi = Paginator(all_naytelmat, 20)
+        page = request.GET.get('sivu')
+        naytelmat = pagi.get_page(page)
+        return render(request, 'all_naytelmat.html', {'naytelmat': naytelmat})
+
+    else:
+        naytelma = get_object_or_404(Kesateatteri_naytelma, pk=naytelma_pk)
+        return render(request, 'naytelma.html', {'naytelma': naytelma})
+

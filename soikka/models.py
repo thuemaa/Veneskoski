@@ -64,3 +64,12 @@ class Kesateatteri_naytelma(models.Model):
     naytos_alku = models.DateField(auto_now_add=False)
     naytos_loppu = models.DateField(auto_now_add=False)
 
+    def __str__(self):
+        return self.nimi
+
+
+class Vuokrattavana(models.Model):
+    """model for vuokrattavana. page uses only last object"""
+    otsikko = models.CharField(max_length=100)
+    sisalto = tinymce_models.HTMLField()
+    paivitetty = models.DateField(auto_now=True)

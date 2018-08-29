@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="content_div">
+    {% for naytelma in naytelmat %}
+        <a href={% url 'naytelmat' naytelma_pk=naytelma.pk %}>{{ naytelma.nimi }}</a> {{ naytelma.naytos_alku }} - {{ naytelma.naytos_loppu }}
+    {% endfor %}
+    </div>
+{% endblock %}
