@@ -73,3 +73,9 @@ class Vuokrattavana(models.Model):
     otsikko = models.CharField(max_length=100)
     sisalto = tinymce_models.HTMLField()
     paivitetty = models.DateField(auto_now=True)
+
+class Yhdistykset(models.Model):
+    """model for yhdistykset. page uses only last object"""
+    otsikko = models.CharField(max_length=100)
+    sisalto = tinymce_models.HTMLField()
+    paivitetty = models.DateField(auto_now=True)

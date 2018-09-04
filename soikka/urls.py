@@ -16,5 +16,6 @@ urlpatterns = [
     path('valokuvat/<int:valokuva_pk>/', views.valokuvat, name='valokuvat'),
     path('valokuvat/', views.valokuvat, name='valokuvat'),
     path('vuokrattavana/', views.vuokrattavana, name='vuokrattavana'),
+    path('yhdistykset/', views.yhdistykset, name='yhdistykset'),
     path('ajax/image/', views.ajax_image, name='ajax_image'),
 ]

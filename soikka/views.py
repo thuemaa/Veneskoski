@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.contrib.auth.decorators import login_required
 from datetime import datetime
-from .models import Ajankohtaista, Tapahtuma, Valokuva, TapahtumaOsallistuja, Vuokrattavana, Kesateatteri, Kesateatteri_naytelma
+from .models import Ajankohtaista, Tapahtuma, Valokuva, TapahtumaOsallistuja, Vuokrattavana, Kesateatteri, Kesateatteri_naytelma, Yhdistykset
 
 # Homepage view
 def home(request):
@@ -98,7 +98,12 @@ def ajax_image(request):
 def vuokrattavana(request):
     """get only the latest object"""
     vuokrattavana = Vuokrattavana.objects.last()
-    return render(request, 'vuokrattavana.html', {'vuokrattavana': vuokrattavana})
+    return render(request, 'vuokrattavanayhdistykset.html', {'model': vuokrattavana})
+
+def yhdistykset(request):
+    """get only the latest object"""
+    yhdistykset = Yhdistykset.objects.last()
+    return render(request, 'vuokrattavanayhdistykset.html', {'model': yhdistykset})
 
 def kesateatteri(request):
     """Get only the latest view"""
