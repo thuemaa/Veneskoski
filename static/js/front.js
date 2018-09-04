@@ -19,20 +19,20 @@ $(document).ready(function() {
 
     /*image mouseover funcs*/
     $(".image_div").mouseover(function() {
-        //console.log("toimii");
         $(this).attr("class", "image_div_mouseover");
-        //$(this).next().attr("class", "image_div_margin");
-        //$(this).prev().attr("class", "image_div_margin");
-        //$(".image_div").not(this).attr("class", "image_div_small");
     });
 
 
     $(".image_div").mouseout(function() {
-        //console.log("toimii");
         $(this).attr("class", "image_div");
-        //$(this).next().attr("class", "image_div");
-        //$(this).prev().attr("class", "image_div");
-        //$(".image_div").not(this).attr("class", "image_div");
+    });
+
+    $(".market_div").mouseover(function() {
+        $(this).attr("class", "image_div_mouseover");
+    });
+
+    $(".market_div").mouseout(function() {
+        $(this).attr("class", "market_div");
     });
 
     //open the image

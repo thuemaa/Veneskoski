@@ -10,5 +10,14 @@
             </li>
         </ul>
     {% endfor %}
+    <div class="paginator_container">
+        {%  if all_ak.has_previous %}
+            <a href="?sivu={{ all_ak.previous_page_number }}">Edellinen sivu</a>
+        {% endif %}
+        <span class="current_page">{{ all_ak.number }} / {{ all_ak.paginator.num_pages }}</span>
+        {%  if all_ak.has_next %}
+            <a href="?sivu={{ all_ak.next_page_number }}">Seuraava sivu</a>
+        {% endif %}
+    </div>
 </div>
 {% endblock %}

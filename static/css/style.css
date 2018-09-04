@@ -193,11 +193,37 @@ nav a {
   margin-right: 200px;
   top: 15px; }
 
+/*same style as image_div, diff class for no onclick*/
+.market_div {
+  display: inline-flex;
+  flex-direction: column;
+  margin: 4rem 25px;
+  background-color: #c3d3d0;
+  border: 0.2rem solid #3d4c49;
+  border-radius: 1rem;
+  overflow: hidden;
+  max-width: 450px;
+  object-fit: contain; }
+  .market_div img {
+    /*prevents image from stretching when using small screen*/
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    object-fit: contain; }
+
+/*single page market object container*/
+.market_big_div {
+  margin: auto; }
+
 body {
   background-color: #9FAEAB; }
 
 .content_div {
   margin: auto 2rem; }
+  .content_div img {
+    max-width: 80vw;
+    object-fit: contain; }
 
 .maindiv {
   margin: 0; }

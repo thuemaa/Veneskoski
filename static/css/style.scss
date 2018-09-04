@@ -4,6 +4,7 @@ $bg-color: #9FAEAB;
 @import 'navigation';
 @import 'form';
 @import 'images';
+@import 'market';
 
 body {
   background-color: $bg-color;
@@ -11,6 +12,11 @@ body {
 
 .content_div {
   margin: auto 2rem;
+
+  img {
+    max-width: 80vw;
+    object-fit: contain;
+  }
 }
 
 .maindiv {

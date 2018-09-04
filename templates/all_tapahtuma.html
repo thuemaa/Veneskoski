@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="content_div">
-    <h2>Kaikki tapahtumat aikajärjestyksessä</h2>
+    <h2>{{ otsikko }}</h2>
     {% for tapahtuma in all_tapahtuma %}
         <ul>
            <li><span style="font-weight: bold">
@@ -12,5 +12,14 @@
             </li>
         </ul>
     {% endfor %}
+    <div class="paginator_container">
+        {%  if all_tapahtuma.has_previous %}
+            <a href="?sivu={{ all_tapahtuma.previous_page_number }}">Edellinen sivu</a>
+        {% endif %}
+        <span class="current_page">{{ all_tapahtuma.number }} / {{ all_tapahtuma.paginator.num_pages }}</span>
+        {%  if all_tapahtuma.has_next %}
+            <a href="?sivu={{ all_tapahtuma.next_page_number }}">Seuraava sivu</a>
+        {% endif %}
+    </div>
 </div>
 {% endblock %}

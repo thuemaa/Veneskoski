@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{%  load fb_versions %}
+
+{% block content %}
+    <div class="images_flex_container">
+    {% for ilmo in kaikki_ilmoitukset %}
+        <a href="{% url 'markkina' ilmoitus_pk=ilmo.pk %}">
+        <div class="market_div">
+            <h3>{{ ilmo.otsikko }}</h3>
+            <span>{{ ilmo.ilmoitustyyppi }}</span>
+            <span>{{ ilmo.pvm }}</span>
+            <img src="{{ ilmo.thumbnail.url }}" id="{{ ilmo.pk }}">
+            <span>{{ ilmo.teksti }}</span>
+            <span>{{ ilmo.ilmoittaja }}</span>
+        </div>
+        </a>
+    {% endfor %}
+    </div>
+{% endblock %}

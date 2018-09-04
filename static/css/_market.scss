@@ -1,0 +1,30 @@
+$image-div-color: #c3d3d0;
+$image-border-color: #3d4c49;
+$margin-size: 25px;
+
+/*same style as image_div, diff class for no onclick*/
+.market_div {
+  display: inline-flex;
+  flex-direction: column;
+  margin: 4rem $margin-size;
+  background-color: $image-div-color;
+  border: 0.2rem solid $image-border-color;
+  border-radius: 1rem;
+  overflow: hidden;
+  max-width: 450px;
+  object-fit: contain;
+
+    img {
+      /*prevents image from stretching when using small screen*/
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      object-fit: contain;
+    }
+}
+
+/*single page market object container*/
+.market_big_div {
+  margin: auto;
+}

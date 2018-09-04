@@ -4,6 +4,7 @@ from datetime import datetime
 from soikka.views import home, ajankohtaista, tapahtumat
 from soikka.models import Ajankohtaista, Tapahtuma
 from customauth.models import MyUser
+from kylalaiset.views import kylaindex
 '''
 TEST:
 
@@ -71,3 +72,13 @@ class HomePageLinksTests(TestCase):
         url = reverse('valokuvat')
         response = self.client.get(url)
         self.assertEquals(response.status_code, 200)
+
+    def test_kylalaiset_view_func(self):
+        page = resolve('/kylalaiset/')
+        self.assertEquals(page.func, kylaindex)
+
+    def test_kylalaiset_status_code(self):
+        """302 for redirecting to login page"""
+        url = reverse('kylaindex')
+        response = self.client.get(url)
+        self.assertEquals(response.status_code, 302)

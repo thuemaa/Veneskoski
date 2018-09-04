@@ -33,7 +33,7 @@ class TapahtumaOsallistuja(models.Model):
     """Model for tapahtuma (event) attendee"""
     tapahtuma = models.ForeignKey(Tapahtuma, on_delete=models.CASCADE)
     osallistuja = models.ForeignKey(MyUser, on_delete=models.CASCADE)
-    ilmottautumis_aika = models.DateTimeField(auto_now_add=False, default=datetime.now)
+    ilmottautumis_aika = models.DateTimeField(auto_now_add=True)
 
 class Valokuva(models.Model):
     """model for valokuva, image object"""
@@ -64,3 +64,18 @@ class Kesateatteri_naytelma(models.Model):
     naytos_alku = models.DateField(auto_now_add=False)
     naytos_loppu = models.DateField(auto_now_add=False)
 
+    def __str__(self):
+        return self.nimi
+
+
+class Vuokrattavana(models.Model):
+    """model for vuokrattavana. page uses only last object"""
+    otsikko = models.CharField(max_length=100)
+    sisalto = tinymce_models.HTMLField()
+    paivitetty = models.DateField(auto_now=True)
+
+class Yhdistykset(models.Model):
+    """model for yhdistykset. page uses only last object"""
+    otsikko = models.CharField(max_length=100)
+    sisalto = tinymce_models.HTMLField()
+    paivitetty = models.DateField(auto_now=True)
