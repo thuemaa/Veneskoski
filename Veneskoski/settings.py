@@ -158,6 +158,10 @@ TINYMCE_DEFAULT_CONFIG = {
     'relative_urls': False,
     'remove_script_host': True,
     'document_base_url': '127.0.0.1:8000',
+    'image_dimensions': False,
+    'image_class_list': [
+            {'title': 'Responsive', 'value': 'img-responsive'}
+        ]
 }
 
 # Grappelli configs

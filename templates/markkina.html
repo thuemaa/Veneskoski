@@ -3,7 +3,13 @@
 {% block content %}
     <div class="market_big_div">
         <h3>{{ ilmoitus.otsikko }}</h3>
-        {% if ilmoitus.ilmoittaja == request.user %}<a href="">poista ilmoitus</a>{% endif %}
+        {% if ilmoitus.ilmoittaja == request.user %}
+            <form action="/kylalaiset/markkinapaikka/poista/" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="hidden_pk" value="{{ilmoitus.pk}}">
+                <button type="submit">Poista ilmoitus</button>
+            </form>
+        {% endif %}
         <span>{{ ilmoitus.ilmoitustyyppi }}</span>
         <span>{{ ilmoitus.pvm }}</span>
         <img src="{{ ilmoitus.kuva.url }}" id="{{ ilmoitus.pk }}">

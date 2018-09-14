@@ -2,7 +2,7 @@
 {% block content %}
     <div class="content_div">
     <h1>{{ kesateatteri.otsikko }}</h1>
-    <p>{{ kesateatteri.sisalto|safe }}</p>
+        <div class="tinymce_div">{{ kesateatteri.sisalto|safe }}</div>
     <span>Päivitetty: {{ kesateatteri.paivitetty }}</span>
     <a href="{% url 'naytelmat' %}">Kesäteatterissa esitetyt näytelmät</a>
     </div>

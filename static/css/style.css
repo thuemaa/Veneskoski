@@ -216,6 +216,11 @@ nav a {
 .market_big_div {
   margin: auto; }
 
+.tinymce_div {
+  max-width: 100vw; }
+  .tinymce_div img {
+    max-width: 100%; }
+
 body {
   background-color: #9FAEAB; }
 

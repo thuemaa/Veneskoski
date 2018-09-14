@@ -4,6 +4,6 @@
     <h1>{{ naytelma.nimi}}</h1>
     <span>Esittäjä: {{ naytelma.esittaja }}</span>
     <span>Esitysaika: {{ naytelma.naytos_alku }} - {{ naytelma.naytos_loppu }}</span>
-    <p>{{ naytelma.sisalto|safe }}</p>
+        <div class="tinymce_div">{{ naytelma.sisalto|safe }}</div>
     </div>
 {% endblock %}
