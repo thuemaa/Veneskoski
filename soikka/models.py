@@ -17,6 +17,9 @@ class Ajankohtaista(models.Model):
     def __str__(self):
         return self.otsikko
 
+    class Meta:
+        verbose_name_plural = "Ajankohtaista"
+
 class Tapahtuma(models.Model):
     """Model for tapahtuma
     TODO: Remove null=True from tekija"""
@@ -29,11 +32,17 @@ class Tapahtuma(models.Model):
     def __str__(self):
         return self.otsikko
 
+    class Meta:
+        verbose_name_plural = "Tapahtumat"
+
 class TapahtumaOsallistuja(models.Model):
     """Model for tapahtuma (event) attendee"""
     tapahtuma = models.ForeignKey(Tapahtuma, on_delete=models.CASCADE)
     osallistuja = models.ForeignKey(MyUser, on_delete=models.CASCADE)
     ilmottautumis_aika = models.DateTimeField(auto_now_add=True)
+    
+    class Meta:
+        verbose_name_plural = "Tapahtuman osallistujat"
 
 class Valokuva(models.Model):
     """model for valokuva, image object"""
@@ -46,6 +55,9 @@ class Valokuva(models.Model):
 
     def __str__(self):
         return self.otsikko
+    
+    class Meta:
+        verbose_name_plural = "Valokuvat"
 
 class Kesateatteri(models.Model):
     """Model for kesäteatteri main page."""
@@ -55,6 +67,9 @@ class Kesateatteri(models.Model):
 
     def __str__(self):
         return self.otsikko
+
+    class Meta:
+        verbose_name_plural = "Kesäteatteri pääsivu"
 
 class Kesateatteri_naytelma(models.Model):
     """Model for single theater act. Contains info such as starting and ending date, name, organizer"""
@@ -67,6 +82,8 @@ class Kesateatteri_naytelma(models.Model):
     def __str__(self):
         return self.nimi
 
+    class Meta:
+        verbose_name_plural = "Kesäteatteri näytelmät"
 
 class Vuokrattavana(models.Model):
     """model for vuokrattavana. page uses only last object"""
@@ -74,8 +91,14 @@ class Vuokrattavana(models.Model):
     sisalto = tinymce_models.HTMLField()
     paivitetty = models.DateField(auto_now=True)
 
+    class Meta:
+        verbose_name_plural = "Vuokrattavana"
+
 class Yhdistykset(models.Model):
     """model for yhdistykset. page uses only last object"""
     otsikko = models.CharField(max_length=100)
     sisalto = tinymce_models.HTMLField()
     paivitetty = models.DateField(auto_now=True)
+
+    class Meta:
+        verbose_name_plural = "Yhdistykset"
