@@ -2,7 +2,7 @@
 {% block content %}
     <div class="content_div">
     <h2>{{ ak.otsikko }}</h2>
-    <p>{{ ak.teksti|safe }}</p>
+        <div class="tinymce_div">{{ ak.teksti|safe }}</div>
     <h4>{{ ak.pvm }}</h4>
     </div>
 {% endblock %}

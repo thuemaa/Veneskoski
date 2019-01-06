@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="content_div">
-    <h1>{{ model.otsikko }}</h1>
-    <p>{{ model.sisalto|safe }}</p>
-    <span>Päivitetty: {{ model.paivitetty }}</span>
+            <h1>{{ model.otsikko }}</h1>
+                <div class="tinymce_div">{{ model.sisalto|safe }}</div>
+            <span>Päivitetty: {{ model.paivitetty }}</span>
     </div>
 {% endblock %}

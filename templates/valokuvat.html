@@ -9,6 +9,7 @@
             <span class="image_header">{{ valokuva.otsikko }}</span>
         </div>
     {% endfor %}
+    </div>
     <div class="paginator_container">
         {%  if valokuvat.has_previous %}
             <a href="?sivu={{ valokuvat.previous_page_number }}">Edellinen sivu</a>
@@ -17,7 +18,6 @@
         {%  if valokuvat.has_next %}
             <a href="?sivu={{ valokuvat.next_page_number }}">Seuraava sivu</a>
         {% endif %}
-    </div>
     </div>
     <!-- div for full image, hidden until image chosen -->
     <div class="large_image_background">

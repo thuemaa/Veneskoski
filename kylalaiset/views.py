@@ -37,7 +37,7 @@ def markkina(request, ilmoitus_pk=None):
 
 @login_required
 def uusi_markkina(request):
-    """form page for markkina object"""
+    """form page for creating markkina object"""
     if request.method == 'POST':
         form = MarkkinaForm(request.POST, request.FILES)
         if form.is_valid():
@@ -50,6 +50,31 @@ def uusi_markkina(request):
         form = MarkkinaForm()
 
     return render(request, 'uusi_markkina.html', {'form': form})
+
+@login_required
+def poista_markkina(request):
+    """Delete markkina object"""
+    if request.method == 'POST':
+        """Get object id from hidden field"""
+        ilmoitus_pk = request.POST.get('hidden_pk')
+
+        if ilmoitus_pk is None:
+            return redirect("markkina")
+
+        """Get ilmoitus object by pk"""
+        ilmoitus = Markkina.objects.get(pk=ilmoitus_pk)
+
+        """Redirect back to markkina object listing if object owner is someone other than authenticated usr"""
+        if ilmoitus.ilmoittaja is not request.user:
+            redirect("markkina")
+
+        """Delete object if it exists"""
+        if ilmoitus is not None:
+            ilmoitus.delete()
+
+    """redirect after delete"""
+    return redirect("markkina")
+
 
 @login_required
 def omat_ilmoitukset(request):

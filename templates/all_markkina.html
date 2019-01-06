@@ -3,6 +3,7 @@
 
 {% block content %}
     <a href="{% url 'uusi_markkina' %}">Uusi ilmoitus</a>
+     <h2><a href="{% url 'uusi_markkina' %}">Uusi ilmoitus</a></h2>
     <div class="images_flex_container">
     {% for ilmo in kaikki_ilmoitukset %}
         <a href="{% url 'markkina' ilmoitus_pk=ilmo.pk %}">

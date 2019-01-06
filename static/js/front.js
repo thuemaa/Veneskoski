@@ -1,9 +1,11 @@
 $(document).ready(function() {
 
     /*hide the navbar*/
-    $(".nav_links_container").hide();
+    console.log( $(window).width());
+    if ( $(window).width() < 1080) $(".nav_links_container").hide();
     $("#ajankohtaista_div").hide();
     $("#tapahtumat_div").hide();
+
     /*set the click function for nav bar*/
     $("#navbutton").click(function() {
         toggleElement(this.id);
@@ -67,6 +69,16 @@ $(document).ready(function() {
         {
             $(".large_image_background").hide();
         }
+    });
+
+    /*removes width and height attributes from tinymce images*/
+    tinydiv = $(".tinymce_div").find("img");
+    console.log(tinydiv);
+
+    tinydiv.each(function() {
+        this.removeAttribute("width");
+        this.removeAttribute("height");
+        console.log(this);
     });
 });
 
