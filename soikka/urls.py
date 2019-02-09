@@ -6,6 +6,7 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('ajankohtaista/<int:ak_pk>/', views.ajankohtaista, name='ajankohtaista'),
     path('ajankohtaista/', views.ajankohtaista, name='ajankohtaista'),
+    path('kartta/', views.kartta, name='kartta'),
     path('kesateatteri/naytelmat/<int:naytelma_pk>/', views.kesateatteri_naytelmat, name='naytelmat'),
     path('kesateatteri/naytelmat/', views.kesateatteri_naytelmat, name='naytelmat'),
     path('kesateatteri/', views.kesateatteri, name='kesateatteri'),

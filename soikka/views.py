@@ -110,6 +110,8 @@ def kesateatteri(request):
     kesateatteri = Kesateatteri.objects.last()
     return render(request, 'kesateatteri.html', {'kesateatteri': kesateatteri})
 
+def kartta(request):
+    return render(request, 'kartta.html')
 
 def kesateatteri_naytelmat(request, naytelma_pk=None):
     """return of a list of all naytelma objects if no args given, or return a single naytelma"""

@@ -289,6 +289,9 @@ html, body, ul, ol {
   .tinymce_div img {
     max-width: 100%; }
 
+#kartta_div {
+  height: 1000px; }
+
 body {
   background-color: #9FAEAB; }
 
