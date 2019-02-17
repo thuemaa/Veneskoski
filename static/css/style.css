@@ -21,10 +21,11 @@ html, body, ul, ol {
   .logo_container {
     margin: auto;
     display: flex;
-    justify-content: center; }
-    .logo_container img {
+    justify-content: center;
+    /*img {
       max-width: 30rem;
-      max-height: 8rem; }
+      max-height: 8rem;
+    }*/ }
 
   .nav_button_div {
     display: none; }
@@ -157,8 +158,14 @@ html, body, ul, ol {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  margin: auto;
   margin-top: 0.3rem;
-  align-items: center; }
+  align-items: center;
+  width: calc(80% - 10px);
+  background-color: #7c8b88;
+  padding: 0 5px 5px 5px;
+  max-width: 1450px;
+  border-radius: 10px 10px 10px 10px; }
 
 .image_div {
   display: inline-flex;
@@ -237,22 +244,40 @@ html, body, ul, ol {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   display: none;
-  text-align: center; }
+  text-align: center;
+  padding: 0;
+  margin: 0; }
 
 .large_image_div {
   position: relative;
   width: 100%;
   height: 100%;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   text-align: center;
-  top: 15%;
+  top: 2%;
+  margin: 0;
+  padding: 0; }
+
+.large_img_imgcontainer {
+  position: relative;
+  display: inline-block;
+  object-fit: contain;
   margin: auto; }
-  .large_image_div img {
-    max-width: 80%;
-    max-height: 80%;
-    margin: auto;
+  .large_img_imgcontainer img {
+    object-fit: contain;
+    max-width: 80vw;
+    max-height: 80vh;
     border: 0.2rem solid #3d4c49;
-    border-radius: 1rem; }
+    border-radius: 1rem;
+    margin: 0;
+    padding: 0; }
+
+.large_image_texbox {
+  background-color: #7c8b88;
+  padding: 0;
+  margin: auto; }
 
 .close_image_icon {
   background-color: whitesmoke;
