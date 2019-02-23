@@ -4,12 +4,13 @@
 
 {% block content %}
 <nav class="navbar">
+        <a href="{% url "home" %}">
         <div class="logo_container">
-            <a href="{% url "home" %}"><picture>
+            <!--<picture>
                 <source media="(min-width: 1080px" srcset="{% static 'silta2.jpg'%}">
                 <img src="{% static 'logo.png' %}" alt="logo">
-            </picture></a>
-        </div>
+            </picture>-->
+        </div></a>
         <div class="nav_button_div">
             <a href="#" id="navbutton">☰</a>
         </div>

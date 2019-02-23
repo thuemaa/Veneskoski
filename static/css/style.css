@@ -11,15 +11,18 @@ html, body, ul, ol {
     margin-bottom: 0.8rem;
     top: 50rem;
     width: 80%;
+    height: 20rem;
     display: block;
-    background: linear-gradient(to right, #748D88, #557570, #557570);
+    background-image: url("silta2.jpg");
+    background-size: cover;
     border-radius: 10px 10px 10px 10px;
     /*ISO EHK├ä */
-    max-width: 1450px;
+    max-width: 1300px;
     box-shadow: 0px 5px 50px 15px #7c8b88; }
 
   .logo_container {
     margin: auto;
+    width: 100%;
     display: flex;
     justify-content: center;
     /*img {
@@ -32,17 +35,19 @@ html, body, ul, ol {
 
   .nav_links_container {
     margin: auto;
-    margin-top: 20px;
-    top: 8.1rem;
+    margin-top: 17.9rem;
+    background-color: rgba(179, 154, 139, 0.55);
+    top: 8rem;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     width: 100%;
-    max-width: 1200px; }
+    max-width: 1300px; }
 
   .link_div a {
     font-size: 1.3rem;
-    color: whitesmoke;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #284004;
     text-decoration: none;
     padding: 5px; }
 
@@ -255,8 +260,9 @@ html, body, ul, ol {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  flex-flow: column nowrap;
   text-align: center;
-  top: 2%;
+  top: 0%;
   margin: 0;
   padding: 0; }
 
@@ -264,7 +270,9 @@ html, body, ul, ol {
   position: relative;
   display: inline-block;
   object-fit: contain;
-  margin: auto; }
+  margin: auto;
+  margin-bottom: 0;
+  padding: 0; }
   .large_img_imgcontainer img {
     object-fit: contain;
     max-width: 80vw;
@@ -341,6 +349,6 @@ body {
     padding: 0 5px 5px 5px;
     border-radius: 10px 10px 10px 10px;
     /*ISO EHK├ä */
-    max-width: 1450px; } }
+    max-width: 1300px; } }
 
 /*# sourceMappingURL=style.css.map */
