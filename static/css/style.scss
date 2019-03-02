@@ -1,4 +1,4 @@
-$bg-color: #9FAEAB;
+$bg-color: #79a235;
 $content-bg-color: #7c8b88;
 
 @import 'reset';
@@ -7,6 +7,7 @@ $content-bg-color: #7c8b88;
 @import 'images';
 @import 'market';
 @import 'tinymce';
+@import 'map';
 
 body {
   background-color: $bg-color;
@@ -26,6 +27,7 @@ body {
     margin: 0;
 }
 
+/*desktop*/
 @media screen and (min-width: 1080px) {
 
   .maindiv {
@@ -40,7 +42,8 @@ body {
     padding: 0 5px 5px 5px;
     border-radius: 10px 10px 10px 10px;
     /*ISO EHKÄ */
-    max-width: 1450px;
+    min-width: 944px;
+    max-width: 1300px;
   }
 
 }

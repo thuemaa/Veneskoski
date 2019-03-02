@@ -14,19 +14,29 @@ $active-link-color: #c8e2dd;
     margin-bottom: 0.8rem;
     top: 50rem;
     width: 80%;
+    height: 32rem;
     display: block;
-    background: linear-gradient(to right, $nav-color, $nav-color2, $nav-color2);
+    //background: linear-gradient(to right, $nav-color, $nav-color2, $nav-color2);
+    background-image: url("siltabanner.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     border-radius: 10px 10px 10px 10px;
     /*ISO EHKÄ */
-    max-width: 1450px;
+    min-width: 950px;
+    max-width: 1300px;
     box-shadow:  0px 5px 50px 15px #7c8b88;
   }
 
   .logo_container {
+
     margin: auto;
+    width: 100%;
     display: flex;
     justify-content: center;
+
     img {
+      display: none;
       max-width: 30rem;
       max-height: 8rem;
     }
@@ -38,21 +48,22 @@ $active-link-color: #c8e2dd;
 
   .nav_links_container {
     margin: auto;
-    margin-top: 20px;
-    top: 8.1rem;
+    margin-top: 28rem;
+    background-color: rgba(179,154,139, 0.55);
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1300px;
 
   }
 
   .link_div {
 
     a {
-      font-size: 1.3rem;
-      color: whitesmoke;
+      font-size: 1.35rem;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: #e1dad3;
       text-decoration: none;
       padding: 5px;
     }
@@ -83,7 +94,7 @@ $active-link-color: #c8e2dd;
 
 
 
-/*mobile*/
+/*-------------------------------mobile----------------------------------------*/
 @media screen and (max-width:1080px) {
   nav {
     position: sticky;

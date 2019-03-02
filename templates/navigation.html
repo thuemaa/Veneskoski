@@ -4,7 +4,10 @@
 
 {% block content %}
 <nav class="navbar">
-        <div class="logo_container"><a href="{% url "home" %}"><img src="{% static 'logo.png' %}" alt="logo"></a></div>
+        <a href="{% url "home" %}">
+        <div class="logo_container">
+                <img src="{% static 'logo.png' %}" alt="logo">
+        </div></a>
         <div class="nav_button_div">
             <a href="#" id="navbutton">☰</a>
         </div>
@@ -27,7 +30,7 @@
             <div class="link_div"><a href="{% url 'valokuvat' %}">Valokuvia</a></div>
             <div class="link_div"><a href="{% url 'vuokrattavana' %}">Vuokrattavana</a></div>
             <div class="link_div"><a href="{% url 'yhdistykset' %}">Yhdistykset</a></div>
-            <div class="link_div"><a href="#">Kartta</a></div>
+            <div class="link_div"><a href="{% url 'kartta' %}">Kartta</a></div>
             <div class="link_div"><a href="{% url "kylaindex" %}">Kyläläisille</a></div>
         </div>
     </nav>
