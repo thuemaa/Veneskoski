@@ -28,17 +28,23 @@ $active-link-color: #c8e2dd;
     box-shadow:  0px 5px 50px 15px #7c8b88;
   }
 
+  .homelinktext {
+    display: none;
+    margin-left: 20px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 45px;
+    color: wheat;
+  }
+
   .logo_container {
-
+    background-color: rgba(179,154,139, 0.75);
     margin: auto;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-
+    margin-left: 0px;
+    width: 173.75px;
     img {
-      display: none;
-      max-width: 30rem;
-      max-height: 8rem;
+      //display: none;
+      max-width: 15rem;
+      max-height: 10rem;
     }
   }
 
@@ -48,7 +54,7 @@ $active-link-color: #c8e2dd;
 
   .nav_links_container {
     margin: auto;
-    margin-top: 28rem;
+    margin-top: 17.25rem;
     background-color: rgba(179,154,139, 0.55);
     display: flex;
     justify-content: space-between;
@@ -62,7 +68,7 @@ $active-link-color: #c8e2dd;
 
     a {
       font-size: 1.35rem;
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-family: "Lato", sans-serif;
       color: #e1dad3;
       text-decoration: none;
       padding: 5px;
@@ -110,6 +116,9 @@ $active-link-color: #c8e2dd;
     color: $opposite-color;
     text-decoration: none;
     font-size: 2.4rem;
+  }
+  .homelinktext {
+    display: none;
   }
 
   .logo_container {

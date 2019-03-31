@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="content_div">
-    <h2>{{ tapahtuma.otsikko }}</h2>
     <div class="tinymce_div">{{ tapahtuma.teksti|safe }}</div>
     <h4>{{ tapahtuma.pvm }}</h4>
     <!--- check if user is authenticated and is (s)he attending the event --->

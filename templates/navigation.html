@@ -4,6 +4,7 @@
 
 {% block content %}
 <nav class="navbar">
+        <a class="homelinktext" href="{% url 'home' %}">Veneskoski</a>
         <a href="{% url "home" %}">
         <div class="logo_container">
                 <img src="{% static 'logo.png' %}" alt="logo">
@@ -27,7 +28,7 @@
                 </div>
             </div>
             <div class="link_div"><a href="{% url 'kesateatteri' %}">Kesäteatteri</a></div>
-            <div class="link_div"><a href="{% url 'valokuvat' %}">Valokuvia</a></div>
+            <div class="link_div"><a href="{% url 'valokuvat' %}">Kuvia</a></div>
             <div class="link_div"><a href="{% url 'vuokrattavana' %}">Vuokrattavana</a></div>
             <div class="link_div"><a href="{% url 'yhdistykset' %}">Yhdistykset</a></div>
             <div class="link_div"><a href="{% url 'kartta' %}">Kartta</a></div>

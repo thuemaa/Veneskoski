@@ -1,5 +1,5 @@
-$bg-color: #79a235;
-$content-bg-color: #7c8b88;
+$bg-color: rgba(71, 148, 226, 0.84);
+$content-bg-color: rgba(179,154,139, 0.75);
 
 @import 'reset';
 @import 'navigation';
@@ -11,11 +11,12 @@ $content-bg-color: #7c8b88;
 
 body {
   background-color: $bg-color;
+  font-family: 'Heebo', sans-serif;
+  font-size: 1.25rem;
 }
 
 .content_div {
   margin: auto 2rem;
-
   img {
     max-width: 95%;
     object-fit: contain;
@@ -37,9 +38,10 @@ body {
 
   .content_div {
     margin: auto;
-    width: calc(80% - 10px);
+    margin-bottom: 20px;
+    width: calc(80% - 30px);
     background-color: $content-bg-color;
-    padding: 0 5px 5px 5px;
+    padding: 0 15px 0 15px;
     border-radius: 10px 10px 10px 10px;
     /*ISO EHKÄ */
     min-width: 944px;
