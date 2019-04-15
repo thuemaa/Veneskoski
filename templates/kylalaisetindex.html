@@ -1,12 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="kylalink_div">
-    <a href=""><h2>Keskustelualue</h2></a>
-</div>
-<div class="kylalink_div">
-    <a href="{% url 'markkina' %}"><h2>Markkinapaikka</h2></a>
-</div>
- <div class="kylalink_div">
-     <a href="{% url 'kayttaja' %}"><h2>Oma profiili</h2></a>
-</div>
+    <div class="content_div">
+        <div class="kylalink_div">
+            <a href=""><h2>Keskustelualue</h2></a>
+        </div>
+        <div class="kylalink_div">
+            <a href="{% url 'markkina' %}"><h2>Markkinapaikka</h2></a>
+        </div>
+         <div class="kylalink_div">
+             <a href="{% url 'kayttaja' %}"><h2>Oma profiili</h2></a>
+         </div>
+    </div>
 {% endblock content %}

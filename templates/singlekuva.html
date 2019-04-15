@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Veneskoski {% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Heebo" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script type="text/javascript" src="{% static 'js/jquery-3.3.1.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/front.js' %}"></script>
+</head>
+<body>
+    <div class="single_img_cont">
+        <div class="single_img_div">
+            <a href="{{ valokuva.kuva.url }}"><img src="{{ valokuva.kuva.url }}"></a>
+            <h2>{{ valokuva.otsikko }}</h2>
+            <span>{{ valokuva.kuvaus }}</span>
+        </div>
+    </div>
+</body>
+</html>

@@ -39,7 +39,7 @@ $margin-size: 25px;
 }
 
 .image_div_mouseover {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   margin: $margin-size;
   background-color: $image-div-color;
@@ -154,4 +154,30 @@ $margin-size: 25px;
   float: right;
   margin-right: 200px;
   top: 15px;
+}
+
+/*single img css*/
+
+.single_img_cont {
+  text-align: center;
+  max-height: 80%;
+  max-width: 80%;
+  margin: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.single_img_div {
+  display:inline-block;
+  align:center;
+  background-color: $content-bg-color;
+  margin: auto;
+  text-align:center;
+  justify-content: center;
+  max-width: 80vw;
+
+  img {
+    max-width: 80vw;
+    max-height: 80vh;
+    object-fit:contain;
+  }
 }

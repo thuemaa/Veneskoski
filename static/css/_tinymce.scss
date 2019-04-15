@@ -4,4 +4,8 @@
   img {
     max-width: 100%;
   }
+
+  p:empty {
+    display: none;
+  }
 }

@@ -37,7 +37,7 @@ $(document).ready(function() {
         $(this).attr("class", "market_div");
     });
 
-    //open the image
+    /*/open the image
     $(".image_div").click(function() {
         console.log("painoit tästä: " + $(this).find("img").attr("id") );
         var image_pk = $(this).find("img").attr("id");
@@ -60,7 +60,7 @@ $(document).ready(function() {
     $(".close_image_icon").click(function() {
         console.log("painoit tästä: " + $(this).find("img").attr("id") );
         $(".large_image_background").toggle();
-    });
+    }); */
 
     $(document).mouseup(function(e)
     {

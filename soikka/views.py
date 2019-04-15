@@ -74,13 +74,19 @@ def tapahtuma_peru(request, tapahtuma_pk):
         TapahtumaOsallistuja.objects.filter(tapahtuma=tapahtuma, osallistuja=request.user).delete()
     return redirect('tapahtumat', tapahtuma_pk=tapahtuma_pk)
 
-def valokuvat(request):
-    """Show list of valokuva objects."""
-    all_valokuvat = Valokuva.objects.all().order_by('-pvm')
-    pagi = Paginator(all_valokuvat, 10)
-    page = request.GET.get('sivu')
-    valokuvat = pagi.get_page(page)
-    return render(request, 'valokuvat.html', {'valokuvat': valokuvat})
+def valokuvat(request, valokuva_pk=None):
+
+    if valokuva_pk:
+        kuva = get_object_or_404(Valokuva, pk=valokuva_pk)
+        return render(request, 'singlekuva.html', {'valokuva': kuva})
+    else:
+        """Show list of valokuva objects."""
+        all_valokuvat = Valokuva.objects.all().order_by('-pvm')
+        pagi = Paginator(all_valokuvat, 10)
+        page = request.GET.get('sivu')
+        valokuvat = pagi.get_page(page)
+        return render(request, 'valokuvat.html', {'valokuvat': valokuvat})
+
 
 
 def ajax_image(request):

@@ -37,7 +37,10 @@ $active-link-color: #c8e2dd;
   }
 
   .logo_container {
-    background-color: rgba(179,154,139, 0.75);
+    //background-color: rgba(179,154,139, 0.75);
+    background-image: url("logobackground.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
     margin: auto;
     margin-left: 0px;
     width: 173.75px;
@@ -46,6 +49,10 @@ $active-link-color: #c8e2dd;
       max-width: 15rem;
       max-height: 10rem;
     }
+  }
+
+  .logo_container:hover {
+    background-color: blue;
   }
 
   .nav_button_div {
@@ -95,9 +102,6 @@ $active-link-color: #c8e2dd;
   }
 
 }
-
-
-
 
 
 /*-------------------------------mobile----------------------------------------*/

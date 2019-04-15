@@ -4,10 +4,10 @@
 {% block content %}
     <div class="images_flex_container">
     {% for valokuva in valokuvat %}
-        <div class="image_div">
+        <a href="{% url 'valokuvat' valokuva_pk=valokuva.pk %}"><div class="image_div">
             <img src="{% version valokuva.kuva 'large' %}" id="{{ valokuva.pk }}">
             <span class="image_header">{{ valokuva.otsikko }}</span>
-        </div>
+        </div></a>
     {% endfor %}
     </div>
     <div class="paginator_container">
