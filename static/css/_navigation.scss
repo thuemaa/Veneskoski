@@ -36,23 +36,32 @@ $active-link-color: #c8e2dd;
     color: wheat;
   }
 
+  /*Home link container*/
   .logo_container {
     //background-color: rgba(179,154,139, 0.75);
+    position: relative;
     background-image: url("logobackground.svg");
     background-size: contain;
     background-repeat: no-repeat;
     margin: auto;
-    margin-left: 0px;
+    margin-left: 20px;
+    top: 10px;
     width: 173.75px;
+    transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
+    //transition: transform 1s ease-in-out;
+    opacity: 0.8;
     img {
       //display: none;
+      opacity: 1;
       max-width: 15rem;
       max-height: 10rem;
     }
   }
 
+  /*home link hover*/
   .logo_container:hover {
-    background-color: blue;
+    opacity: 1;
+    transform: rotate(5deg);
   }
 
   .nav_button_div {
@@ -79,6 +88,12 @@ $active-link-color: #c8e2dd;
       color: #e1dad3;
       text-decoration: none;
       padding: 5px;
+      text-shadow: 1px 1px 1px #000;
+      transition: text-shadow 0.5s ease-in-out;
+    }
+
+    a:hover {
+      text-shadow: 2px 2px 2px #000;
     }
   }
 

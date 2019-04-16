@@ -1,5 +1,5 @@
-$bg-color: rgba(71, 148, 226, 0.84);
-$content-bg-color: rgba(179,154,139, 0.75);
+$bg-color: rgba(195, 211, 208, 0.84);
+$content-bg-color: rgba(241, 215, 198, 0.55);
 
 @import 'reset';
 @import 'navigation';
@@ -41,7 +41,7 @@ body {
     margin-bottom: 20px;
     width: calc(80% - 30px);
     background-color: $content-bg-color;
-    padding: 0 15px 0 15px;
+    padding: 0 10px 0 10px;
     border-radius: 10px 10px 10px 10px;
     /*ISO EHKÄ */
     min-width: 944px;

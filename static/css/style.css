@@ -30,19 +30,27 @@ html, body, ul, ol {
     font-size: 45px;
     color: wheat; }
 
+  /*Home link container*/
   .logo_container {
+    position: relative;
     background-image: url("logobackground.svg");
     background-size: contain;
     background-repeat: no-repeat;
     margin: auto;
-    margin-left: 0px;
-    width: 173.75px; }
+    margin-left: 20px;
+    top: 10px;
+    width: 173.75px;
+    transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
+    opacity: 0.8; }
     .logo_container img {
+      opacity: 1;
       max-width: 15rem;
       max-height: 10rem; }
 
+  /*home link hover*/
   .logo_container:hover {
-    background-color: blue; }
+    opacity: 1;
+    transform: rotate(5deg); }
 
   .nav_button_div {
     display: none; }
@@ -62,7 +70,11 @@ html, body, ul, ol {
     font-family: "Lato", sans-serif;
     color: #e1dad3;
     text-decoration: none;
-    padding: 5px; }
+    padding: 5px;
+    text-shadow: 1px 1px 1px #000;
+    transition: text-shadow 0.5s ease-in-out; }
+  .link_div a:hover {
+    text-shadow: 2px 2px 2px #000; }
 
   .inner_link_div {
     position: absolute;
@@ -183,7 +195,7 @@ html, body, ul, ol {
   margin-top: 0.3rem;
   align-items: center;
   width: calc(80% - 10px);
-  background-color: rgba(179, 154, 139, 0.75);
+  background-color: rgba(241, 215, 198, 0.55);
   padding: 0 5px 5px 5px;
   min-width: 944px;
   max-width: 1300px;
@@ -297,7 +309,7 @@ html, body, ul, ol {
 
 .large_image_texbox {
   max-width: 80vw;
-  background-color: rgba(179, 154, 139, 0.75);
+  background-color: rgba(241, 215, 198, 0.55);
   border: 0.2rem solid #3d4c49;
   border-radius: 1rem;
   padding: 0;
@@ -322,7 +334,7 @@ html, body, ul, ol {
 .single_img_div {
   display: inline-block;
   align: center;
-  background-color: rgba(179, 154, 139, 0.75);
+  background-color: rgba(241, 215, 198, 0.55);
   margin: auto;
   text-align: center;
   justify-content: center;
@@ -357,9 +369,12 @@ html, body, ul, ol {
 
 .tinymce_div {
   max-width: 100vw;
-  margin: 0px; }
+  margin: 0px;
+  padding: 20px; }
   .tinymce_div img {
     max-width: 100%; }
+  .tinymce_div p {
+    margin: 0; }
   .tinymce_div p:empty {
     display: none; }
 
@@ -367,7 +382,7 @@ html, body, ul, ol {
   height: 1000px; }
 
 body {
-  background-color: rgba(71, 148, 226, 0.84);
+  background-color: rgba(195, 211, 208, 0.84);
   font-family: 'Heebo', sans-serif;
   font-size: 1.25rem; }
 
@@ -390,8 +405,8 @@ body {
     margin: auto;
     margin-bottom: 20px;
     width: calc(80% - 30px);
-    background-color: rgba(179, 154, 139, 0.75);
-    padding: 0 15px 0 15px;
+    background-color: rgba(241, 215, 198, 0.55);
+    padding: 0 10px 0 10px;
     border-radius: 10px 10px 10px 10px;
     /*ISO EHK├ä */
     min-width: 944px;
