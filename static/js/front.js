@@ -1,12 +1,37 @@
 $(document).ready(function() {
 
     /*hide the navbar*/
-    console.log( $(window).width());
-    if ( $(window).width() < 1080) $(".nav_links_container").hide();
+    if ( window.innerWidth <= 1080) {
+        $(".nav_links_container").hide();
+        console.log("navcont hide");
+
+        /*Hide mobile navbar on scroll*/
+        var prevScrollpos = window.pageYOffset;
+        $(window).scroll(function() {
+            var scrollPos = window.pageYOffset;
+            if (prevScrollpos > scrollPos) {
+                $(".navbar").css('top',  "0");
+                $(".nav_links_container").css('left',  "0");
+            }
+            else {
+                $(".navbar").css('top',  "-9rem");
+                $(".nav_links_container").css('left',  "-200px");
+            }
+            prevScrollpos = scrollPos;
+            console.log(prevScrollpos + " cur pos: " + scrollPos);
+        });
+    }
+
+    /*Show navbar when resizing from mobile to desktop*/
+    $(window).resize(function() {
+       if (window.innerWidth > 1080) $(".nav_links_container").show();
+    });
+
+    /*hide the inner links*/
     $("#ajankohtaista_div").hide();
     $("#tapahtumat_div").hide();
 
-    /*set the click function for nav bar*/
+    /*set the click function for nav bar etc*/
     $("#navbutton").click(function() {
         toggleElement(this.id);
     });
@@ -30,14 +55,14 @@ $(document).ready(function() {
     });
 
     $(".market_div").mouseover(function() {
-        $(this).attr("class", "image_div_mouseover");
+        $(this).toggleClass("market_div_mouseover");
     });
 
     $(".market_div").mouseout(function() {
         $(this).attr("class", "market_div");
     });
 
-    /*/open the image
+    /*/AJAX image handling, not in use
     $(".image_div").click(function() {
         console.log("painoit tästä: " + $(this).find("img").attr("id") );
         var image_pk = $(this).find("img").attr("id");
@@ -80,6 +105,7 @@ $(document).ready(function() {
         this.removeAttribute("height");
         console.log(this);
     });
+
 });
 
 /*click function for toggling navbar elements*/

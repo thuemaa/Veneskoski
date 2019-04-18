@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <div class="content_div">
     <div class="market_big_div">
         <h3>{{ ilmoitus.otsikko }}</h3>
         {% if ilmoitus.ilmoittaja == request.user %}
@@ -10,10 +11,11 @@
                 <button type="submit">Poista ilmoitus</button>
             </form>
         {% endif %}
-        <span>{{ ilmoitus.ilmoitustyyppi }}</span>
+        <span>{{ ilmoitus.get_ilmoitustyyppi_display }}</span>
         <span>{{ ilmoitus.pvm }}</span>
         <img src="{{ ilmoitus.kuva.url }}" id="{{ ilmoitus.pk }}">
         <span>{{ ilmoitus.teksti }}</span>
         <span>{{ ilmoitus.ilmoittaja }}</span>
+    </div>
     </div>
 {%  endblock %}

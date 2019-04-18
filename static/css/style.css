@@ -52,6 +52,7 @@ html, body, ul, ol {
     opacity: 1;
     transform: rotate(5deg); }
 
+  /*hide hamburger*/
   .nav_button_div {
     display: none; }
 
@@ -72,23 +73,33 @@ html, body, ul, ol {
     text-decoration: none;
     padding: 5px;
     text-shadow: 1px 1px 1px #000;
-    transition: text-shadow 0.5s ease-in-out; }
-  .link_div a:hover {
-    text-shadow: 2px 2px 2px #000; }
+    transition: text-shadow 0.3s ease-in-out; }
 
-  .inner_link_div {
+  .link_div:hover {
+    background-color: rgba(214, 188, 173, 0.9);
+    border-radius: 2px 2px 2px 2px;
+    transition: background-color 0.2s ease-in-out; }
+    .link_div:hover a {
+      text-shadow: 2px 2px 2px #000; }
+
+  .inner_link_container {
     position: absolute;
-    background-color: #748D88;
+    background-color: rgba(214, 188, 173, 0.9);
+    max-width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
     display: flex;
-    flex-direction: column; }
-    .inner_link_div a {
+    flex-direction: column;
+    border-radius: 0 0 20px 20px; }
+    .inner_link_container a {
       font-size: 1.25rem;
       color: white;
       padding: 6px 6px; }
 
   /*add this style class to clicked link*/
   .active_link {
-    background-color: #c8e2dd; } }
+    background-color: rgba(214, 188, 173, 0.9);
+    border-radius: 2px 2px 2px 2px; } }
 /*-------------------------------mobile----------------------------------------*/
 @media screen and (max-width: 1080px) {
   nav {
@@ -96,7 +107,8 @@ html, body, ul, ol {
     top: 0px;
     overflow: hidden;
     display: block;
-    background: linear-gradient(to right, #748D88, #557570, #557570); }
+    background: linear-gradient(to right, #748D88, #557570, #557570);
+    transition: top 0.4s; }
 
   nav a {
     float: left;
@@ -132,26 +144,36 @@ html, body, ul, ol {
     position: fixed;
     float: left;
     /*Adjust this for drop down menu to appear right below the navbar*/
-    top: 8.1rem;
+    top: 8.3rem;
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    max-width: 200px;
+    border-radius: 0 5px 15px 0;
+    transition: left 0.8s; }
+
+  .link_div:last-of-type {
+    border-radius: 0 0 15px 0; }
 
   .link_div {
     background-color: #557570; }
     .link_div a {
-      font-size: 1.35rem;
+      font-size: 1.25rem;
       padding: 6px 8px; }
 
-  .inner_link_div {
+  .inner_link_container {
     position: fixed;
     /*adjust this for outer links to appear right on the border of upper link div*/
     left: 9rem;
     background-color: #748D88;
     display: flex;
-    flex-direction: column; }
-    .inner_link_div a {
-      font-size: 1.25rem;
-      padding: 6px 6px; }
+    flex-direction: column;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-radius: 0 5px 15px 0; }
+    .inner_link_container a {
+      font-size: 1.05rem;
+      padding: 0.4rem 0.5rem; }
 
   /*add this style class to clicked link*/
   .active_link {
@@ -195,11 +217,9 @@ html, body, ul, ol {
   margin-top: 0.3rem;
   align-items: center;
   width: calc(80% - 10px);
-  background-color: rgba(241, 215, 198, 0.55);
   padding: 0 5px 5px 5px;
   min-width: 944px;
-  max-width: 1300px;
-  border-radius: 10px 10px 10px 10px; }
+  max-width: 1300px; }
 
 .image_div {
   display: inline-flex;
@@ -322,6 +342,11 @@ html, body, ul, ol {
   margin-right: 200px;
   top: 15px; }
 
+/*MOBILE*/
+@media screen and (max-width: 1080px) {
+  .images_flex_container {
+    max-width: 80vw;
+    min-width: 0; } }
 /*single img css*/
 .single_img_cont {
   text-align: center;
@@ -362,6 +387,9 @@ html, body, ul, ol {
     max-height: 100%;
     width: auto;
     object-fit: contain; }
+
+.market_div_mouseover {
+  box-shadow: 5px 8px 10px #72a26f; }
 
 /*single page market object container*/
 .market_big_div {
@@ -404,7 +432,7 @@ body {
   .content_div {
     margin: auto;
     margin-bottom: 20px;
-    width: calc(80% - 30px);
+    width: calc(80% - 20px);
     background-color: rgba(241, 215, 198, 0.55);
     padding: 0 10px 0 10px;
     border-radius: 10px 10px 10px 10px;

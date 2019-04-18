@@ -10,11 +10,11 @@ $margin-size: 25px;
   margin-top: 0.3rem;
   align-items: center;
   width: calc(80% - 10px);
-  background-color: $content-bg-color;
+  //background-color: $content-bg-color;
   padding: 0 5px 5px 5px;
   min-width: 944px;
   max-width: 1300px;
-  border-radius: 10px 10px 10px 10px;
+
 }
 
 .image_div {
@@ -156,6 +156,17 @@ $margin-size: 25px;
   top: 15px;
 }
 
+/*MOBILE*/
+@media screen and (max-width: 1080px) {
+  .images_flex_container {
+    max-width: 80vw;
+    min-width: 0;
+  }
+
+
+}
+
+
 /*single img css*/
 
 .single_img_cont {
@@ -181,3 +192,4 @@ $margin-size: 25px;
     object-fit:contain;
   }
 }
+

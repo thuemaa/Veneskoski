@@ -2,6 +2,7 @@
 {%  load fb_versions %}
 
 {% block content %}
+    <div class="content_div">
     <div class="images_flex_container">
     {% for valokuva in valokuvat %}
         <a href="{% url 'valokuvat' valokuva_pk=valokuva.pk %}"><div class="image_div">
@@ -31,5 +32,6 @@
                 <span class="large_kuvaus">kuvaus pleisholder</span>
             </div>
         </div>
+    </div>
     </div>
 {% endblock %}

@@ -1,5 +1,7 @@
 $nav-color: #748D88;
 $nav-color2: #557570;
+$nav-color-desktop: rgba(179,154,139, 0.55);
+$nav-color-desktop2: rgba(214, 188, 173, 0.9);
 $extra-color1: #3D615B;
 $extra-color2: #254741;
 $opposite-color: #FFFFFF;
@@ -64,6 +66,7 @@ $active-link-color: #c8e2dd;
     transform: rotate(5deg);
   }
 
+  /*hide hamburger*/
   .nav_button_div {
     display: none;
   }
@@ -71,7 +74,7 @@ $active-link-color: #c8e2dd;
   .nav_links_container {
     margin: auto;
     margin-top: 17.25rem;
-    background-color: rgba(179,154,139, 0.55);
+    background-color: $nav-color-desktop;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -89,20 +92,30 @@ $active-link-color: #c8e2dd;
       text-decoration: none;
       padding: 5px;
       text-shadow: 1px 1px 1px #000;
-      transition: text-shadow 0.5s ease-in-out;
-    }
+      transition: text-shadow 0.3s ease-in-out;
 
-    a:hover {
+    }
+  }
+
+  .link_div:hover {
+    background-color: $nav-color-desktop2;
+    border-radius: 2px 2px 2px 2px;
+    transition: background-color 0.2s ease-in-out;
+    a {
       text-shadow: 2px 2px 2px #000;
     }
   }
 
 
-  .inner_link_div {
+  .inner_link_container {
     position: absolute;
-    background-color: $nav-color;
+    background-color: $nav-color-desktop2;
+    max-width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
+    border-radius: 0 0 20px 20px;
 
     a {
       font-size: 1.25rem;
@@ -111,9 +124,12 @@ $active-link-color: #c8e2dd;
     }
   }
 
+
+
   /*add this style class to clicked link*/
   .active_link {
-    background-color: $active-link-color;
+    background-color: $nav-color-desktop2;
+    border-radius: 2px 2px 2px 2px;
   }
 
 }
@@ -127,6 +143,7 @@ $active-link-color: #c8e2dd;
     overflow: hidden;
     display: block;
     background: linear-gradient(to right, $nav-color, $nav-color2, $nav-color2);
+    transition: top 0.4s;
   }
 
   nav a {
@@ -168,31 +185,42 @@ $active-link-color: #c8e2dd;
     position: fixed;
     float: left;
     /*Adjust this for drop down menu to appear right below the navbar*/
-    top: 8.1rem;
+    top: 8.3rem;
     display: flex;
     flex-direction: column;
+    max-width: 200px;
+    border-radius: 0 5px 15px 0;
+    transition: left 0.8s;
+  }
+
+  .link_div:last-of-type {
+    border-radius: 0 0 15px 0;
   }
 
   .link_div {
     background-color: $nav-color2;
 
     a {
-      font-size: 1.35rem;
+      font-size: 1.25rem;
       padding: 6px 8px;
     }
   }
 
-  .inner_link_div {
+  .inner_link_container {
     position: fixed;
     /*adjust this for outer links to appear right on the border of upper link div*/
     left: 9rem;
     background-color: $nav-color;
     display: flex;
     flex-direction: column;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-radius: 0 5px 15px 0;
 
     a {
-      font-size: 1.25rem;
-      padding: 6px 6px;
+      font-size: 1.05rem;
+      padding: 0.4rem 0.5rem;
     }
   }
 
