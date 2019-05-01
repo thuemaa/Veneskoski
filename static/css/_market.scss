@@ -1,23 +1,29 @@
 $image-div-color: #c3d3d0;
 $image-border-color: #3d4c49;
-$margin-size: 25px;
+$margin-size: 2rem;
 
 /*same style as image_div, diff class for no onclick*/
 .market_div {
+  text-align: center;
   display: inline-flex;
   flex-direction: column;
-  margin: 4rem $margin-size;
+  margin: 2rem $margin-size;
   background-color: $image-div-color;
   border: 0.2rem solid $image-border-color;
   border-radius: 1rem;
   overflow: hidden;
-  max-width: 450px;
+  max-width: 300px;
   object-fit: contain;
+
+   h3 {
+      margin: 0;
+      margin-top: 1rem;
+    }
 
     img {
       /*prevents image from stretching when using small screen*/
       display: block;
-      max-width: 100%;
+      max-width: 100% !important;
       max-height: 100%;
       width: auto;
       object-fit: contain;
@@ -25,8 +31,9 @@ $margin-size: 25px;
 }
 
 .market_div_mouseover {
-  box-shadow: 5px 8px 10px #72a26f;
+  box-shadow: 5px 8px 35px #3d4c49;
 }
+
 /*single page market object container*/
 .market_big_div {
   text-align: center;

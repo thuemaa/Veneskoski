@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="content_div">
+    <h2>Tiedotteet kyläläisille</h2>
+    {% for kt in all_kt %}
+        <ul>
+            <li><span style="font-weight: bold"><a href="{% url 'kylalaistiedote' kt_pk=kt.pk %}">{{ kt.otsikko }}</a></span>
+               <small>{{ kt.kuvaus }}</small>
+               <small class="italicspan">{{ kt.pvm|date:'d.m.y H:i' }}</small>
+            </li>
+        </ul>
+    {% endfor %}
+{%  if all_kt.has_other_pages %}
+    <div class="paginator_container">
+        {%  if all_kt.has_previous %}
+            <a href="?sivu={{ all_kt.previous_page_number }}"><<</a>
+        {% endif %}
+            <span class="current_page">{{ all_kt.number }} / {{ all_kt.paginator.num_pages }}</span>
+        {%  if all_kt.has_next %}
+            <a href="?sivu={{ all_kt.next_page_number }}">>></a>
+        {% endif %}
+    </div>
+        {% endif %}
+</div>
+{% endblock %}

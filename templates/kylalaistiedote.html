@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="content_div">
+        <div class="tinymce_div">{{ kt.teksti|safe }}</div>
+    <h4>{{ kt.pvm|date:'d.m.y H:i' }}</h4>
+    </div>
+{% endblock %}

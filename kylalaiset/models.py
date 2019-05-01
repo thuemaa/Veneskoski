@@ -3,6 +3,8 @@ from customauth.models import MyUser
 from django.core.files.base import ContentFile
 from PIL import Image as PIL_Image
 from io import BytesIO
+from datetime import datetime
+from tinymce import models as tinymce_models
 import os
 
 class Markkina(models.Model):
@@ -74,3 +76,15 @@ class Markkina(models.Model):
         temp_thumb.close()
 
         return True
+
+
+class Kylalaistiedote(models.Model):
+    """Model for ajankohtaista article"""
+    otsikko = models.CharField(max_length=200)
+    kuvaus = models.TextField(max_length=1000)
+    teksti = tinymce_models.HTMLField()
+    pvm = models.DateTimeField(auto_now_add=False, default=datetime.now)
+    tekija = models.ForeignKey(MyUser, related_name='user_kylalaistiedote', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.otsikko

@@ -4,7 +4,7 @@ from django.core.paginator import Paginator
 from django.http import HttpResponse
 from customauth.models import MyUser
 import customauth.views as auth_views
-from .models import Markkina
+from .models import Markkina, Kylalaistiedote
 from .forms import MarkkinaForm
 from soikka.models import Tapahtuma, TapahtumaOsallistuja
 
@@ -98,3 +98,17 @@ def omat_tapahtumat(request):
     # set the header
     otsikko = "Tapahtumat johon olet ilmottautunut"
     return render(request, 'all_tapahtuma.html', {'all_tapahtuma': all_tapahtuma, 'otsikko': otsikko})
+
+@login_required
+def kylalaistiedote(request, kt_pk=None):
+    """Get the ajankohtaista object by primary key and pass it to template
+    If no argument, show all ajakohtaista objects"""
+    if kt_pk:
+        kylatiedote = get_object_or_404(Kylalaistiedote, pk=kt_pk)
+        return render(request, 'kylalaistiedote.html', {'kt': kylatiedote})
+    else:
+        kaikki_kylalaistiedote = Kylalaistiedote.objects.all().order_by('-pvm')
+        paginator = Paginator(kaikki_kylalaistiedote, 20)
+        page = request.GET.get('sivu', 1)
+        all_kt = paginator.get_page(page)
+        return render(request, 'all_kylalaistiedote.html', {'all_kt': all_kt})

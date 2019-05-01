@@ -8,18 +8,20 @@
                <a href="{% url 'tapahtumat' tapahtuma_pk=tapahtuma.pk %}">{{ tapahtuma.otsikko }}</a>
                 </span>
                <small>{{ tapahtuma.kuvaus }}</small>
-               <small>{{ tapahtuma.pvm }}</small>
+               <small class="italicspan">{{ tapahtuma.pvm|date:'d.m.y H:i' }}</small>
             </li>
         </ul>
     {% endfor %}
+{%  if all_tapahtuma.has_other_pages %}
     <div class="paginator_container">
         {%  if all_tapahtuma.has_previous %}
-            <a href="?sivu={{ all_tapahtuma.previous_page_number }}">Edellinen sivu</a>
+            <a href="?sivu={{ all_tapahtuma.previous_page_number }}"><<</a>
         {% endif %}
         <span class="current_page">{{ all_tapahtuma.number }} / {{ all_tapahtuma.paginator.num_pages }}</span>
         {%  if all_tapahtuma.has_next %}
-            <a href="?sivu={{ all_tapahtuma.next_page_number }}">Seuraava sivu</a>
+            <a href="?sivu={{ all_tapahtuma.next_page_number }}">>></a>
         {% endif %}
     </div>
+{% endif %}
 </div>
 {% endblock %}

@@ -13,9 +13,13 @@
         {% include 'includes/form.html' %}
         <button type="submit" class="form_button">Kirjaudu sisään</button>
     </form>
+    <span class="reglink"><a href="{% url 'sign_up' %}">Rekisteröidy</a></span>
+        <a href="#" class="reginstructionlink">Salasana unohtunut?</a>
+    <div class="reginstructions">Jos olet unohtanut salasanasi, laita sähköpostia osoitteeseen webmaster@veneskoski.org.<br>
+        Ilmoita sähköpostissa sähköpostiosoitteesi jota käytät kirjautumiseen. Saat uuden salasanan sähköpostiisi.
+        Vaihda annettu salasana uuteen sen jälkeen kun olet kirjautunut sillä sisään.</div>
     {% else %}
     <h2>Olet kirjautunut sisään!</h2>
     {% endif %}
-    <h2><a href="{% url 'sign_up' %}">Rekisteröidy</a></h2>
     </div>
 {% endblock %}

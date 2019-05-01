@@ -3,6 +3,8 @@ from . import views
 
 urlpatterns = [
     path('', views.kylaindex, name='kylaindex'),
+    path('kylalaistiedote/<int:kt_pk>', views.kylalaistiedote, name='kylalaistiedote'),
+    path('kylalaistiedote/', views.kylalaistiedote, name='kylalaistiedote'),
     path('profiili/ilmoitukset/', views.omat_ilmoitukset, name='omat_ilmoitukset'),
     path('profiili/tapahtumat/', views.omat_tapahtumat, name='omat_tapahtumat'),
     path('profiili/', views.kayttaja, name='kayttaja'),

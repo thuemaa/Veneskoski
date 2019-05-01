@@ -9,6 +9,11 @@
         <div class="logo_container">
                 <img src="{% static 'logo.png' %}" alt="logo">
         </div></a>
+        {% if request.user %}
+            <div class="usernamebox">
+            {{ request.user.etunimi }} {{ request.user.suknimi }}
+            </div>
+        {% endif %}
         <div class="nav_button_div">
             <a href="#" id="navbutton">☰</a>
         </div>

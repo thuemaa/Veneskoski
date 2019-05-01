@@ -236,6 +236,9 @@ html, body, ul, ol {
 .reginstructions {
   font-size: 0.8rem; }
 
+.reglink {
+  font-size: 0.8rem; }
+
 .images_flex_container {
   display: flex;
   flex-flow: row wrap;
@@ -286,16 +289,6 @@ html, body, ul, ol {
     border-bottom: 0.2rem solid #3d4c49;
     width: auto;
     object-fit: contain; }
-
-.paginator_container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 180px;
-  height: 40px;
-  margin: auto;
-  margin-bottom: 25px;
-  border: 1px solid black; }
 
 .image_div_margin {
   /*NOT IN USE*/
@@ -386,6 +379,9 @@ html, body, ul, ol {
   margin-bottom: 1rem; }
 
 .single_img_div {
+  border: 0.2rem solid #3d4c49;
+  border-radius: 1rem;
+  overflow: hidden;
   display: inline-block;
   align: center;
   background-color: rgba(241, 215, 198, 0.55);
@@ -400,25 +396,29 @@ html, body, ul, ol {
 
 /*same style as image_div, diff class for no onclick*/
 .market_div {
+  text-align: center;
   display: inline-flex;
   flex-direction: column;
-  margin: 4rem 25px;
+  margin: 2rem 2rem;
   background-color: #c3d3d0;
   border: 0.2rem solid #3d4c49;
   border-radius: 1rem;
   overflow: hidden;
-  max-width: 450px;
+  max-width: 300px;
   object-fit: contain; }
+  .market_div h3 {
+    margin: 0;
+    margin-top: 1rem; }
   .market_div img {
     /*prevents image from stretching when using small screen*/
     display: block;
-    max-width: 100%;
+    max-width: 100% !important;
     max-height: 100%;
     width: auto;
     object-fit: contain; }
 
 .market_div_mouseover {
-  box-shadow: 5px 8px 10px #72a26f; }
+  box-shadow: 5px 8px 35px #3d4c49; }
 
 /*single page market object container*/
 .market_big_div {
@@ -445,7 +445,7 @@ html, body, ul, ol {
     margin: 0; }
   .tinymce_div p:empty {
     display: none; }
-  .tinymce_div ul {
+  .tinymce_div ul, .tinymce_div ol {
     padding-left: 20px; }
 
 #kartta_div {
@@ -458,13 +458,40 @@ body {
 
 .content_div {
   z-index: 1;
-  margin: auto 2rem; }
+  margin: auto 2rem;
+  padding: 0; }
   .content_div img {
     max-width: 95%;
     object-fit: contain; }
 
 .maindiv {
-  margin: 0; }
+  margin: 0;
+  padding: 0;
+  /*common styles for links*/ }
+  .maindiv a {
+    color: rgba(21, 21, 21, 0.64);
+    text-decoration: none; }
+  .maindiv a:visited {
+    color: rgba(21, 21, 21, 0.64);
+    text-decoration: none; }
+  .maindiv a:hover {
+    text-shadow: 1px 1px 1px rgba(21, 21, 21, 0.64); }
+
+.paginator_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 40px;
+  margin: auto;
+  margin-bottom: 2rem;
+  border: 1px solid #3d4c49;
+  border-radius: 4px; }
+  .paginator_container span {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem; }
+  .paginator_container a {
+    font-size: 1rem; }
 
 /*desktop*/
 @media screen and (min-width: 1080px) {

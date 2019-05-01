@@ -63,17 +63,6 @@ $margin-size: 25px;
     }
 }
 
-.paginator_container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 180px;
-  height: 40px;
-  margin: auto;
-  margin-bottom: $margin-size;
-  border: 1px solid black;
-}
-
 .image_div_margin {
   /*NOT IN USE*/
   display: flex;
@@ -181,6 +170,9 @@ $margin-size: 25px;
   margin-bottom: 1rem;
 }
 .single_img_div {
+  border: 0.2rem solid $image-border-color;
+  border-radius: 1rem;
+  overflow: hidden;
   display:inline-block;
   align:center;
   background-color: $content-bg-color;

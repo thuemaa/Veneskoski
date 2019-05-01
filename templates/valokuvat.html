@@ -13,11 +13,11 @@
     </div>
     <div class="paginator_container">
         {%  if valokuvat.has_previous %}
-            <a href="?sivu={{ valokuvat.previous_page_number }}">Edellinen sivu</a>
+            <a href="?sivu={{ valokuvat.previous_page_number }}"><<</a>
         {% endif %}
         <span class="current_page">{{ valokuvat.number }} / {{ valokuvat.paginator.num_pages }}</span>
         {%  if valokuvat.has_next %}
-            <a href="?sivu={{ valokuvat.next_page_number }}">Seuraava sivu</a>
+            <a href="?sivu={{ valokuvat.next_page_number }}">>></a>
         {% endif %}
     </div>
     <!-- div for full image, hidden until image chosen -->
