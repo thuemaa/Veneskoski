@@ -22,7 +22,7 @@ class Markkina(models.Model):
 
     otsikko = models.CharField(max_length=100)
     ilmoitustyyppi = models.CharField(max_length=6, choices=ILMOITUSTYYPPI_VALINNAT, default=MYYNTI)
-    kuva = models.ImageField(upload_to='markkina/kuvat')
+    kuva = models.ImageField(upload_to='markkina/kuvat', default="emptymarket.jpg")
     thumbnail = models.ImageField(upload_to='markkina/thumbnail', blank=True)
     teksti = models.TextField()
     pvm = models.DateTimeField(auto_now_add=True)
@@ -31,8 +31,15 @@ class Markkina(models.Model):
     def __str__(self):
         return self.otsikko
 
-        # custom save, required for thumbnail
+    # custom save, required for thumbnail
     def save(self, *args, **kwargs):
+
+        '''TODO later on: check if no img in post
+        if self.kuva.default:
+            self.thumbnail = self.kuva
+            super(Markkina, self).save(*args, **kwargs)
+        '''
+
         if not self.create_thumbnail():
             raise Exception('error creating thumbnail.')
 

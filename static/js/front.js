@@ -30,6 +30,7 @@ $(document).ready(function() {
     /*hide the inner links*/
     $("#ajankohtaista_div").hide();
     $("#tapahtumat_div").hide();
+    $('.reginstructions').hide();
 
     /*set the click function for nav bar etc*/
     $("#navbutton").click(function() {
@@ -42,6 +43,10 @@ $(document).ready(function() {
 
     $("#tapahtumat_a").click(function() {
         toggleElement(this.id);
+    });
+
+    $('.reginstructionlink').click(function() {
+        $('.reginstructions').show();
     });
 
     /*image mouseover funcs*/

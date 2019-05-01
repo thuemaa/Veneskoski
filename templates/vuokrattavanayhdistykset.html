@@ -3,6 +3,6 @@
     <div class="content_div">
             <h1>{{ model.otsikko }}</h1>
                 <div class="tinymce_div">{{ model.sisalto|safe }}</div>
-            <span>Päivitetty: {{ model.paivitetty }}</span>
+            <span class="datespan">{{ model.paivitetty|date:'d.m.y' }}</span>
     </div>
 {% endblock %}

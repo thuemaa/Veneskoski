@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="center_div">
-    <h2>{{user.first_name}} {{user.last_name}}</h2>
+<div class="content_div">
+    <h3>{{user.first_name}} {{user.last_name}}</h3>
     <a href="{% url 'omat_tapahtumat' %}" class="button_link">Ilmottaudutut tapahtumat</a>
     <a href="{% url 'omat_ilmoitukset' %}" class="button_link">Omat kauppailmoitukset</a>
     <a href="{% url 'edit_user' %}" class="button_link">Muuta tietoja</a>

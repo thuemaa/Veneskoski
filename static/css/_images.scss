@@ -9,9 +9,10 @@ $margin-size: 25px;
   margin: auto;
   margin-top: 0.3rem;
   align-items: center;
-  width: calc(80% - 10px);
+  width: 100%;
   //background-color: $content-bg-color;
-  padding: 0 5px 5px 5px;
+  //padding: 0 5px 5px 5px;
+  padding: 0;
   min-width: 944px;
   max-width: 1300px;
 
@@ -31,8 +32,9 @@ $margin-size: 25px;
     img {
       /*prevents image from stretching when using small screen*/
       display: block;
-      max-width: 100%;
+      max-width: 100% !important;
       max-height: 100%;
+      border-bottom: 0.2rem solid $image-border-color;
       width: auto;
       object-fit: contain;
     }
@@ -53,8 +55,9 @@ $margin-size: 25px;
   img {
       /*prevents image from stretching when using small screen*/
       display: block;
-      max-width: 100%;
+      max-width: 100% !important;
       max-height: 100%;
+      border-bottom: 0.2rem solid $image-border-color;
       width: auto;
       object-fit: contain;
     }

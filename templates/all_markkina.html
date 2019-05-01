@@ -10,7 +10,7 @@
         <div class="market_div">
             <h3>{{ ilmo.otsikko }}</h3>
             <span>{{ ilmo.get_ilmoitustyyppi_display }}</span>
-            <span>{{ ilmo.pvm }}</span>
+            <span>{{ ilmo.pvm|date:'d.m.y H:i' }}</span>
             <img src="{{ ilmo.thumbnail.url }}" id="{{ ilmo.pk }}">
             <span>{{ ilmo.teksti }}</span>
             <span>{{ ilmo.ilmoittaja }}</span>

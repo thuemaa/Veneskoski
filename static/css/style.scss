@@ -16,6 +16,7 @@ body {
 }
 
 .content_div {
+  z-index: 1;
   margin: auto 2rem;
   img {
     max-width: 95%;
@@ -37,15 +38,30 @@ body {
   }
 
   .content_div {
+    position: relative;
     margin: auto;
     margin-bottom: 20px;
-    width: calc(80% - 20px);
+    width: calc(80% - 3rem);
     background-color: $content-bg-color;
-    padding: 0 10px 0 10px;
+    padding: 0.5rem 1.5rem 1rem 1.5rem;
     border-radius: 10px 10px 10px 10px;
     /*ISO EHKÄ */
     min-width: 944px;
-    max-width: 1300px;
+    max-width: calc(1300px - 3rem);
+  }
+
+  .datespan {
+    position: absolute;
+    right: 1.5rem;
+    bottom: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .toprightspan {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 1rem;
   }
 
 }

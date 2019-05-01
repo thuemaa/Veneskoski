@@ -9,3 +9,22 @@ class MarkkinaForm(forms.ModelForm):
         model = Markkina
         # fields = '__all__'
         fields = ['otsikko', 'ilmoitustyyppi', 'teksti', 'kuva']
+
+        error_messages = {
+            'otsikko': {
+                'invalid': 'Virheellinen otsikko',
+                'required': 'Anna ilmoitukselle otsikko',
+            },
+            'ilmoitustyyppi': {
+                'invalid': 'Syöte ei kelpaa',
+                'required': 'Valitse ilmoitustyyppi',
+            },
+            'teksti': {
+                'invalid': 'Liian pitkä teksti',
+                'required': 'Kirjoita lyhyt kuvaus ilmoituksesta',
+            },
+            'kuva': {
+                'invalid_image': 'Virheellinen kuvatiedosto.',
+                'required': ''
+            }
+        }

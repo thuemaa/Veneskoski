@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="content_div">
-    <h1>{{ kesateatteri.otsikko }}</h1>
+    <h2>{{ kesateatteri.otsikko }}</h2>
         <div class="tinymce_div">{{ kesateatteri.sisalto|safe }}</div>
-    <span>Päivitetty: {{ kesateatteri.paivitetty }}</span>
-    <a href="{% url 'naytelmat' %}">Kesäteatterissa esitetyt näytelmät</a>
+    <span class="toprightspan"><a href="{% url 'naytelmat' %}">Veneskosken kesäteatterissa esitetyt näytelmät</a></span>
+    <span class="datespan">{{ kesateatteri.paivitetty|date:'d.m.y H:i' }}</span>
     </div>
 {% endblock %}

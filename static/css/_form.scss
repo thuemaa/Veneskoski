@@ -8,12 +8,32 @@ $button-border-color: #3D615B;
   display: flex;
   flex-direction: column;
 
+  label {
+    margin-top: 0.8rem;
+  }
   input {
     border-radius: 6px;
+  }
 
+  select {
+    border-radius: 6px;
+    width: 100%;
+  }
+
+  textarea {
+    height: 30vh;
+    border-radius: 6px;
+    resize: none;
   }
 }
 
+@media screen and (min-width: 1080px) {
+  .market_form_div {
+    margin: auto;
+    width: 50%;
+    justify-content: center;
+  }
+}
 .help_text {
   font-size: 12px;
   color: $helptext_color;
@@ -43,4 +63,12 @@ $button-border-color: #3D615B;
   border: 2px solid $button-border-color;
   border-radius: 0.4rem;
   padding: 0.6rem 1rem;
+}
+
+.reginstructionlink {
+  font-size: 0.8rem;
+}
+
+.reginstructions {
+  font-size: 0.8rem;
 }

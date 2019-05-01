@@ -63,7 +63,7 @@ $active-link-color: #c8e2dd;
   /*home link hover*/
   .logo_container:hover {
     opacity: 1;
-    transform: rotate(5deg);
+    transform: rotate(3deg);
   }
 
   /*hide hamburger*/
@@ -104,6 +104,15 @@ $active-link-color: #c8e2dd;
     a {
       text-shadow: 2px 2px 2px #000;
     }
+
+    .inner_link a {
+      text-shadow: 1px 1px 1px #000;
+    }
+
+    .inner_link:hover a {
+      text-shadow: 2px 2px 2px #000;
+    }
+
   }
 
 
@@ -115,6 +124,7 @@ $active-link-color: #c8e2dd;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    z-index: 2;
     border-radius: 0 0 20px 20px;
 
     a {
@@ -191,6 +201,7 @@ $active-link-color: #c8e2dd;
     max-width: 200px;
     border-radius: 0 5px 15px 0;
     transition: left 0.8s;
+    z-index: 2;
   }
 
   .link_div:last-of-type {
@@ -217,6 +228,7 @@ $active-link-color: #c8e2dd;
     white-space: nowrap;
     overflow: hidden;
     border-radius: 0 5px 15px 0;
+    z-index: 2;
 
     a {
       font-size: 1.05rem;

@@ -11,8 +11,14 @@ class CreateUserForm(forms.ModelForm):
         'required': 'Syötä salasana',
     }
 
+    regkey_errors = {
+        'invalid': '',
+        'required': ''
+    }
+
     password = forms.CharField(label='Salasana', error_messages=password_errors, widget=forms.PasswordInput)
     password2 = forms.CharField(label='Vahvista salasana', error_messages=password_errors, widget=forms.PasswordInput)
+    registration_key = forms.CharField(label='Rekisteröintiavain', error_messages=regkey_errors, widget=forms.PasswordInput)
 
     class Meta:
         model = MyUser
@@ -50,9 +56,13 @@ class CreateUserForm(forms.ModelForm):
 
         password = cleaned_data.get("password")
         password2 = cleaned_data.get("password2")
+        regkey = cleaned_data.get("registration_key")
 
         if password and password2 and password != password2:
             self.add_error('password2', "Salasanat eivät täsmää!")
+
+        if regkey != "soikansilta":
+            self.add_error('registration_key', "Väärä rekisteröintiavain")
 
         return super(CreateUserForm, self).clean()
 
@@ -61,6 +71,8 @@ class CreateUserForm(forms.ModelForm):
         user = super(CreateUserForm, self).save(commit=False)
 
         user.set_password(self.cleaned_data['password'])
+        user.first_name = self.cleaned_data['first_name'].title()
+        user.last_name = self.cleaned_data['last_name'].title()
 
         if commit:
             user.save()

@@ -4,6 +4,10 @@
     <div class="content_div">
     <div class="market_big_div">
         <h3>{{ ilmoitus.otsikko }}</h3>
+        <span class="italicspan">{{ ilmoitus.get_ilmoitustyyppi_display }}</span><br>
+        <span class="toprightspan">Ilmoittaja: {{ ilmoitus.ilmoittaja }}</span><br>
+        <img src="{{ ilmoitus.kuva.url }}" id="{{ ilmoitus.pk }}"><br>
+        <span>{{ ilmoitus.teksti }}</span>
         {% if ilmoitus.ilmoittaja == request.user %}
             <form action="/kylalaiset/markkinapaikka/poista/" method="post">
                 {% csrf_token %}
@@ -11,11 +15,7 @@
                 <button type="submit">Poista ilmoitus</button>
             </form>
         {% endif %}
-        <span>{{ ilmoitus.get_ilmoitustyyppi_display }}</span>
-        <span>{{ ilmoitus.pvm }}</span>
-        <img src="{{ ilmoitus.kuva.url }}" id="{{ ilmoitus.pk }}">
-        <span>{{ ilmoitus.teksti }}</span>
-        <span>{{ ilmoitus.ilmoittaja }}</span>
+        <span class="datespan">{{ ilmoitus.pvm|date:'d.m.y H:i' }}</span>
     </div>
     </div>
 {%  endblock %}

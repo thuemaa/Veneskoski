@@ -3,7 +3,7 @@
     <div class="content_div">
     <h1>{{ naytelma.nimi}}</h1>
     <span>Esittäjä: {{ naytelma.esittaja }}</span>
-    <span>Esitysaika: {{ naytelma.naytos_alku }} - {{ naytelma.naytos_loppu }}</span>
+    <span>Esitysaika: {{ naytelma.naytos_alku|date:'d.m.y' }} - {{ naytelma.naytos_loppu|date:'d.m.y' }}</span>
         <div class="tinymce_div">{{ naytelma.sisalto|safe }}</div>
     </div>
 {% endblock %}
