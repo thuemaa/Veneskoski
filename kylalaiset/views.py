@@ -32,8 +32,12 @@ def markkina(request, ilmoitus_pk=None):
         ilmoitus = get_object_or_404(Markkina, pk=ilmoitus_pk)
         return render(request, 'markkina.html', {'ilmoitus': ilmoitus})
 
-    kaikki_ilmoitukset = Markkina.objects.all().order_by('-pk')
-    return render(request, 'all_markkina.html', {'kaikki_ilmoitukset': kaikki_ilmoitukset})
+    all_ilmoitukset = Markkina.objects.all().order_by('-pk')
+    pagi = Paginator(all_ilmoitukset, 10)
+    page = request.GET.get('sivu')
+    ilmoitukset = pagi.get_page(page)
+
+    return render(request, 'all_markkina.html', {'kaikki_ilmoitukset': ilmoitukset})
 
 @login_required
 def uusi_markkina(request):

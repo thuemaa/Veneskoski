@@ -17,5 +17,16 @@
         </a>
     {% endfor %}
     </div>
+    {%  if kaikki_ilmoitukset.has_other_pages %}
+    <div class="paginator_container">
+        {%  if kaikki_ilmoitukset.has_previous %}
+            <a href="?sivu={{ kaikki_ilmoitukset.previous_page_number }}"><<</a>
+        {% endif %}
+            <span class="current_page">{{ kaikki_ilmoitukset.number }} / {{ kaikki_ilmoitukset.paginator.num_pages }}</span>
+        {%  if kaikki_ilmoitukset.has_next %}
+            <a href="?sivu={{ kaikki_ilmoitukset.next_page_number }}">>></a>
+        {% endif %}
+    </div>
+        {% endif %}
     </div>
 {% endblock %}

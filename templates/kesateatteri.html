@@ -3,7 +3,8 @@
     <div class="content_div">
     <h2>{{ kesateatteri.otsikko }}</h2>
         <div class="tinymce_div">{{ kesateatteri.sisalto|safe }}</div>
-    <span class="toprightspan"><a href="{% url 'naytelmat' %}">Veneskosken kesäteatterissa esitetyt näytelmät</a></span>
+        <br>
+    <span class="toprightspan"><a href="{% url 'naytelmat' %}">Kesäteatterissa esitetyt näytelmät</a></span><br>
     <span class="datespan">{{ kesateatteri.paivitetty|date:'d.m.y H:i' }}</span>
     </div>
 {% endblock %}

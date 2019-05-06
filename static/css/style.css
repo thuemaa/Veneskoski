@@ -92,6 +92,7 @@ html, body, ul, ol {
     max-width: 250px;
     white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
     display: flex;
     flex-direction: column;
     z-index: 2;
@@ -99,7 +100,8 @@ html, body, ul, ol {
     .inner_link_container a {
       font-size: 1.25rem;
       color: white;
-      padding: 6px 6px; }
+      padding: 6px 6px;
+      text-overflow: ellipsis; }
 
   /*add this style class to clicked link*/
   .active_link {
@@ -176,6 +178,7 @@ html, body, ul, ol {
     max-width: 200px;
     white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
     border-radius: 0 5px 15px 0;
     z-index: 2; }
     .inner_link_container a {
@@ -438,15 +441,45 @@ html, body, ul, ol {
 .tinymce_div {
   max-width: 100vw;
   margin: 0px;
-  padding: 0px; }
+  padding: 0px;
+  /*Paragraph styles for tinymce formats*/ }
   .tinymce_div img {
     max-width: 100%; }
-  .tinymce_div p {
-    margin: 0; }
   .tinymce_div p:empty {
-    display: none; }
+    display: none;
+    margin: 0;
+    padding: 0;
+    width: 0;
+    height: 0; }
   .tinymce_div ul, .tinymce_div ol {
-    padding-left: 20px; }
+    padding-left: 30px; }
+  .tinymce_div p {
+    margin: 0;
+    padding: 0;
+    font-size: 1.05rem;
+    font-family: 'Heebo', sans-serif; }
+  .tinymce_div h1 {
+    font-size: 2rem;
+    font-family: 'Heebo', sans-serif; }
+  .tinymce_div h2 {
+    font-size: 1.75rem;
+    font-family: 'Heebo', sans-serif; }
+  .tinymce_div h3 {
+    font-size: 1.5rem;
+    font-family: 'Heebo', sans-serif; }
+  .tinymce_div h4 {
+    font-size: 1.25rem;
+    font-family: 'Heebo', sans-serif; }
+  .tinymce_div h5 {
+    font-size: 1rem;
+    font-family: 'Heebo', sans-serif; }
+  .tinymce_div h6 {
+    font-size: 0.75rem;
+    font-family: 'Heebo', sans-serif; }
+  .tinymce_div table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse; }
 
 #kartta_div {
   height: 1000px; }
@@ -454,15 +487,21 @@ html, body, ul, ol {
 body {
   background-color: rgba(195, 211, 208, 0.84);
   font-family: 'Heebo', sans-serif;
-  font-size: 1.25rem; }
+  font-size: 1.05rem; }
 
 .content_div {
   z-index: 1;
-  margin: auto 2rem;
+  margin: 1rem;
   padding: 0; }
   .content_div img {
     max-width: 95%;
     object-fit: contain; }
+
+.listaus_ul {
+  list-style-position: outside;
+  padding-left: 20px; }
+  .listaus_ul li {
+    padding-bottom: 8px; }
 
 .maindiv {
   margin: 0;
@@ -475,7 +514,7 @@ body {
     color: rgba(21, 21, 21, 0.64);
     text-decoration: none; }
   .maindiv a:hover {
-    text-shadow: 1px 1px 1px rgba(21, 21, 21, 0.64); }
+    text-shadow: 1px 1px 1px rgba(101, 98, 100, 0.7); }
 
 .paginator_container {
   display: flex;
@@ -509,7 +548,8 @@ body {
     border-radius: 10px 10px 10px 10px;
     /*ISO EHK├ä */
     min-width: 944px;
-    max-width: calc(1300px - 3rem); }
+    max-width: calc(1300px - 3rem);
+    box-shadow: 0px 5px 50px 15px #7c8b88; }
 
   .datespan {
     position: absolute;

@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="content_div">
-    <h2>Ajankohtaiset artikkelit aikajärjestyksessä</h2>
+    <h2>Ajankohtaista</h2>
+<ul class="listaus_ul">
     {% for ak in all_ak %}
-        <ul>
             <li><span style="font-weight: bold"><a href="{% url 'ajankohtaista' ak_pk=ak.pk %}">{{ ak.otsikko }}</a></span>
-               <small>{{ ak.kuvaus }}</small>
-               <small class="italicspan">{{ ak.pvm|date:'d.m.y H:i' }}</small>
+                <small class="italicspan">{{ ak.pvm|date:'d.m.y H:i' }}</small><br>
+                <small>{{ ak.kuvaus }}</small>
             </li>
-        </ul>
     {% endfor %}
+</ul>
 {%  if all_ak.has_other_pages %}
     <div class="paginator_container">
         {%  if all_ak.has_previous %}

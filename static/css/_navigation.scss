@@ -122,6 +122,7 @@ $active-link-color: #c8e2dd;
     max-width: 250px;
     white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
     display: flex;
     flex-direction: column;
     z-index: 2;
@@ -131,6 +132,7 @@ $active-link-color: #c8e2dd;
       font-size: 1.25rem;
       color: white;
       padding: 6px 6px;
+      text-overflow: ellipsis;
     }
   }
 
@@ -227,6 +229,7 @@ $active-link-color: #c8e2dd;
     max-width: 200px;
     white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
     border-radius: 0 5px 15px 0;
     z-index: 2;
 

@@ -2,14 +2,16 @@
 {% block content %}
 <div class="content_div">
     <h2>Tiedotteet kyläläisille</h2>
+    <ul class="listaus_ul">
     {% for kt in all_kt %}
-        <ul>
+
             <li><span style="font-weight: bold"><a href="{% url 'kylalaistiedote' kt_pk=kt.pk %}">{{ kt.otsikko }}</a></span>
-               <small>{{ kt.kuvaus }}</small>
-               <small class="italicspan">{{ kt.pvm|date:'d.m.y H:i' }}</small>
+               <small class="italicspan">{{ kt.pvm|date:'d.m.y H:i' }}</small><br>
+                <small>{{ kt.kuvaus }}</small>
             </li>
-        </ul>
     {% endfor %}
+    </ul>
+
 {%  if all_kt.has_other_pages %}
     <div class="paginator_container">
         {%  if all_kt.has_previous %}

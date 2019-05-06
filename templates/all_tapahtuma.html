@@ -2,16 +2,16 @@
 {% block content %}
 <div class="content_div">
     <h2>{{ otsikko }}</h2>
+    <ul class="listaus_ul">
     {% for tapahtuma in all_tapahtuma %}
-        <ul>
            <li><span style="font-weight: bold">
                <a href="{% url 'tapahtumat' tapahtuma_pk=tapahtuma.pk %}">{{ tapahtuma.otsikko }}</a>
                 </span>
+               <small class="italicspan">{{ tapahtuma.pvm|date:'d.m.y H:i' }}</small><br>
                <small>{{ tapahtuma.kuvaus }}</small>
-               <small class="italicspan">{{ tapahtuma.pvm|date:'d.m.y H:i' }}</small>
             </li>
-        </ul>
     {% endfor %}
+    </ul>
 {%  if all_tapahtuma.has_other_pages %}
     <div class="paginator_container">
         {%  if all_tapahtuma.has_previous %}

@@ -6,16 +6,61 @@
     max-width: 100%;
   }
 
-  p{
-    margin: 0;
-  }
-
   p:empty {
     display: none;
+    margin: 0;
+    padding: 0;
+    width: 0;
+    height: 0;
   }
 
   ul, ol {
-    padding-left: 20px;
+    padding-left: 30px;
   }
 
+  /*Paragraph styles for tinymce formats*/
+
+  p{
+    margin: 0;
+    padding: 0;
+    font-size: 1.05rem;
+    font-family: 'Heebo', sans-serif;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-family: 'Heebo', sans-serif;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    font-family: 'Heebo', sans-serif;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-family: 'Heebo', sans-serif;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+    font-family: 'Heebo', sans-serif;
+  }
+
+  h5 {
+    font-size: 1rem;
+    font-family: 'Heebo', sans-serif;
+  }
+
+  h6 {
+    font-size: 0.75rem;
+    font-family: 'Heebo', sans-serif;
+  }
+
+  table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+  }
 }
+

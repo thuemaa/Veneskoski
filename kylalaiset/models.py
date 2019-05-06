@@ -64,7 +64,7 @@ class Markkina(models.Model):
             FTYPE = 'JPEG'
         elif t_ext == '.gif':
                 FTYPE = 'GIF'
-        elif t_ext == '.png':
+        elif t_ext == '.png' or t_ext == '.PNG':
                 FTYPE = 'PNG'
         else:
            return False
