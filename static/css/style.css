@@ -442,6 +442,7 @@ html, body, ul, ol {
   max-width: 100vw;
   margin: 0px;
   padding: 0px;
+  word-wrap: break-word;
   /*Paragraph styles for tinymce formats*/ }
   .tinymce_div img {
     max-width: 100%; }
@@ -477,9 +478,15 @@ html, body, ul, ol {
     font-size: 0.75rem;
     font-family: 'Heebo', sans-serif; }
   .tinymce_div table {
-    width: 100%;
-    max-width: 100%;
-    border-collapse: collapse; }
+    max-width: 100% !important;
+    border-collapse: collapse;
+    table-layout: fixed !important;
+    border: 1px solid #3d4c49;
+    border-radius: 25px; }
+    .tinymce_div table td, .tinymce_div table th {
+      border: 1px solid #3d4c49;
+      white-space: normal;
+      word-break: break-all !important; }
 
 #kartta_div {
   height: 1000px; }
