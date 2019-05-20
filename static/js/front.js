@@ -144,3 +144,15 @@ function toggleElement(id) {
         $("#" + id).parent().toggleClass("active_link");
     }
 }
+
+
+/*ei toimi
+ $(document).click(function(e)
+    {
+        if (this.id != 'navlinkcont'&& $(".nav_links_container").is(':visible') ) {
+         $(".nav_links_container").toggle();
+           console.log("osuu");
+        }
+        else console.log("eiosu");
+    });
+*/

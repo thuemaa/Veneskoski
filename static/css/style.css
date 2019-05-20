@@ -396,6 +396,9 @@ html, body, ul, ol {
     max-width: 80vw;
     max-height: 80vh;
     object-fit: contain; }
+  .single_img_div h3 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem; }
 
 /*same style as image_div, diff class for no onclick*/
 .market_div {
@@ -500,6 +503,43 @@ body {
   z-index: 1;
   margin: 1rem;
   padding: 0; }
+  .content_div p {
+    margin: 0;
+    padding: 0;
+    font-size: 1.05rem;
+    font-family: 'Heebo', sans-serif; }
+  .content_div h1 {
+    font-size: 2rem;
+    font-family: 'Heebo', sans-serif;
+    padding: 0;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem; }
+  .content_div h2 {
+    font-size: 1.75rem;
+    font-family: 'Heebo', sans-serif;
+    padding: 0;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem; }
+  .content_div h3 {
+    font-size: 1.5rem;
+    font-family: 'Heebo', sans-serif;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem; }
+  .content_div h4 {
+    font-size: 1.25rem;
+    font-family: 'Heebo', sans-serif;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem; }
+  .content_div h5 {
+    font-size: 1rem;
+    font-family: 'Heebo', sans-serif;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem; }
+  .content_div h6 {
+    font-size: 0.75rem;
+    font-family: 'Heebo', sans-serif;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem; }
   .content_div img {
     max-width: 95%;
     object-fit: contain; }
