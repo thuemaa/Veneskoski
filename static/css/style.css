@@ -579,6 +579,16 @@ body {
   .paginator_container a {
     font-size: 1rem; }
 
+.lbannerdiv {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-top: 2rem; }
+  .lbannerdiv img {
+    max-height: 40px;
+    padding: 5px; }
+
 /*desktop*/
 @media screen and (min-width: 1080px) {
   .maindiv {
@@ -608,6 +618,15 @@ body {
     position: absolute;
     top: 1.5rem;
     right: 1.5rem;
-    font-size: 1rem; } }
+    font-size: 1rem; }
+
+  .lbannerdiv {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 2rem; }
+    .lbannerdiv img {
+      max-height: 40px;
+      padding: 5px; } }
 
 /*# sourceMappingURL=style.css.map */

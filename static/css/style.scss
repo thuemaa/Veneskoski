@@ -129,6 +129,18 @@ body {
   }
 }
 
+.lbannerdiv {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 2rem;
+    img {
+      max-height:40px;
+      padding: 5px;
+    }
+  }
+
 /*desktop*/
 @media screen and (min-width: 1080px) {
 
@@ -165,4 +177,14 @@ body {
     font-size: 1rem;
   }
 
+  .lbannerdiv {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 2rem;
+    img {
+      max-height:40px;
+      padding: 5px;
+    }
+  }
 }
